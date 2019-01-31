@@ -1,0 +1,69 @@
+30_Interfacesces-
+
+***********************************************************************************
+1.We create interfaces using interface Keyword.
+
+2.Interfaces contains properties,methods,declarations or events only declarations and no implemantatuiioins.
+3.Interface methods and properties are public by default and compile time error if we try to implement the interface members.
+4.Interfaces members are public by default and they dont allow explicit access modifiers.
+5.Interfaces can not contain fields.
+6.if a class or struct inherits from interface it must prvide implementation for all the inetrface membeers,otherwise we get a comile time error.
+7.A class or a struct can inherit from multiple interfaces but can not inherit from multiple classes at the same time.
+8.Interface can inherit from another interface and a class that inherts second interface must provide implementatyon for all the interface members in the entire inheritance chain.
+9 we can not create an instance of an inheritance nut an instance reference variable can point to a derived class object.
+***********************************************************
+Code-
+
+using System;
+
+
+interface Iinterface1
+{
+    void Print();//interfaces methods without implementation
+}
+
+public class Test : Iinterface1
+{
+    public void Print()//Implementing the interface methods.
+    {
+        Console.WriteLine("Interface method implemented");
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Test t = new Test();
+        t.Print();
+
+    }
+}
+
+******************************************************
+using System;
+
+
+interface Iinterface1
+{
+    void Print();//interfaces methods without implementation
+}
+
+public class Test : Iinterface1
+{
+    public void Print()//Implementing the interface methods.
+    {
+        Console.WriteLine("Interface method implemented");
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Iinterface1 Inter1 = new Test();//Interface reference variable pointing to a derived class object.
+        Inter1 .Print();
+
+    }
+}
+

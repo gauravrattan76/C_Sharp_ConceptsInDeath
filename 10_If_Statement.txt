@@ -1,0 +1,33 @@
+10_If_Statement
+****************************************************
+if 
+else if 
+
+______________________________________--
+
+else if advantage is that if one condition is true then it skips all the other processing and leave the current block.
+
+
+*********************************************************
+
+
+Difference between || and |
+
+
+In single pipe it checks bot the conditions always.
+
+if(username ==10 || username ==20)
+
+_____________________________________________
+
+&& and &
+
+double && checks for the both conditions .If first conditon fails it will skip the second condition.
+& will check for the other conditions.Even if the first condition fails it will stil check the second condition.
+
+
+&&,|| are called short circuit operators.
+
+
+*****************************************************************
+

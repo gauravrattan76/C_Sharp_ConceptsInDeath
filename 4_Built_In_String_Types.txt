@@ -1,0 +1,26 @@
+4_Built_In_String_Types
+*********************************************************
+
+ string s = "c:\\arv\\test";
+            Console.WriteLine(s);
+
+
+Gives output- c:\arv\test
+
+___________________________________
+
+ string s = @"c:\\arv\\test";
+            Console.WriteLine(s);
+
+Gives output -c:\\arv\\test
+
+**************************************************************
+
+Verbatim literal- is a string with an @ symbol prefixed.
+
+
+Verbatim literal makes escape sequences translate as nomal printable characters.
+
+
+
+

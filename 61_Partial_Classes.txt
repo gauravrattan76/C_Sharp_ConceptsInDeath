@@ -1,0 +1,95 @@
+61_Partial_Classes-
+****************************************************************
+Partial classes allow us to split a class into 2 or more files.
+
+All these part are then combined into a single clss when the appication is compiled.
+
+Partial key word can also be used to split a struct or interface over 2 or more files.
+
+**********************************************************
+
+Advantage-
+
+Visual studio uses partial classes to separate automatically generated code from th developer code.
+
+When we add a webform 2 .cs files are added
+1.webform1.aspx.cs- developers code
+2.webform1.aspx.designer.cs- contains the system generated code.that is declarations of control you drag and drop on the web form.
+
+_____________________________
+
+when working on large projects sprading a clss over 2 files allows multiple programmers to work on it simlultaneously.
+
+**************************************************************************
+Code-
+
+In Same project-
+
+Program.cs-
+
+using System;
+using ConsoleApplication1;
+
+
+class Program
+{
+    public static void Main()
+    {
+        Partial p = new Partial();
+        p.fname = "Gaurav";
+        p.lname = "Rattan";
+        p.Print();
+      
+    }
+
+
+    
+
+}
+
+
+____________________________________________________________
+
+Partial1.cs-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+ public  partial class Partial
+    {
+        string _fname;
+        string _lname;
+
+        public string fname { get; set; }
+        public string lname { get; set; }
+    }
+}
+
+
+____________________________________________
+
+Partial2.cs-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+ public partial  class Partial
+    {
+        public void Print()
+        {
+            string name = fname + lname;
+            Console.WriteLine(fname);
+
+        }
+    }
+}

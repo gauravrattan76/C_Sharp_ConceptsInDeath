@@ -1,0 +1,144 @@
+18_Namespaces-
+
+use to organise the program.collection of classes
+provide assistance in name clashing.
+
+Namspace is the sname of the project.
+
+If I create a project with name Project.TeamA name space will be namespace ProjectA.TeamA.
+
+***********************************************
+
+If I have the same classes and the same methods use a namsepace-
+
+
+using System;
+using TA = ProjectA.TeamA;//when I dont ant to use the fully qualified name.
+using TB = ProjectB.TeamB;
+
+public class program
+{
+
+    public static void Main() {
+        TA.ClassA.PrintA();
+        TB.ClassA.PrintA();
+    }
+}
+
+
+
+
+
+namespace ProjectA
+{
+    namespace TeamA
+    {
+        public class ClassA
+        {
+            public static void PrintA() {
+                Console.WriteLine("From Namespace 1");
+            }
+        }
+    }
+}
+namespace ProjectB
+{
+    namespace TeamB
+    {
+        public class ClassA
+        {
+            public static void PrintA()
+            {
+                Console.WriteLine("From Namespace 2");
+            }
+        }
+    }
+}
+
+
+Output-
+from namespace 1
+from namespace 2
+
+*****************************************************************************************************
+
+We have a solution-
+
+Solution has projects.each project compiles to form a assembly.
+
+exe for console appliaction.
+dll for class library.
+
+
+
+create a console application-
+in the solution create two class library ProjectA.TeamA. and then the classes
+ProjectA.TeamB and then the clasess.
+
+add refrence in the console application and the use the using keyword.
+
+for console appication-
+
+using System;
+using TB = ProjectA.TeamB;
+using TA = ProjectA.TeamA;
+
+public class program
+{
+
+    public static void Main() {
+        TA.ClassA.PrintA();
+        TB.ClassB.PrintA();
+    }
+}
+
+add refernces for other projets name and use the using keyword.
+and then use using keyword
+
+ProjectA.TeamA-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjectA.TeamA
+{
+    public class ClassA
+    {
+        public static void PrintA()
+        {
+            Console.WriteLine("From Namespace A");
+        }
+    }
+}
+
+
+
+
+
+ProjectA.TeamB-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjectA.TeamB
+{
+    public class ClassB
+    {
+        public static void PrintA()
+        {
+            Console.WriteLine("From Namespace B");
+        }
+    }
+}
+
+
+************************************************************************
+
+
+

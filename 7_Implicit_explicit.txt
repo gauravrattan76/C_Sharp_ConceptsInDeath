@@ -1,0 +1,64 @@
+7_Implicit and Explicit Conversion-
+
+****************************************************
+
+Implicit-when we are converting from int to float no loss of data  and no exception to be thrown then it is implicit.
+
+int i = 10;
+float f = i;
+*****************************************************************************
+
+Explicit-
+when converting float to int then loss of dat and as well eception to be thronw.
+
+converting flaot to int-
+
+
+************************It will convert leaving the decimals
+flaot f = 123.45f
+int a =(int)f;
+
+
+*******************************
+flaot f = 123536664677773.45f
+int a =(int)f;-- This will just display the maximum size a int can handle
+
+to Get the overflow exception we use- convert.toint
+flaot f = 123536664677773.45f
+int a =convert.toint(f);--It will throwing the overflow exception.
+
+
+
+*************************************************
+
+for strings
+
+string s ="12345";
+int a =int.parse(s);
+
+output - 12345;
+
+
+if we have -
+
+string s ="12345assffff";
+int a =int.parse(s);--It will throw format exceptiion.
+
+
+string s ="1233eddff";
+int result = 0;
+boolean finalresult = int.tryparse(s,out res);-It will retunr true if its able to poerform thr typecaset false if not able to perfrom the type cast.
+
+**********************************************************************
+
+
+
+
+
+
+
+
+
+
+
+

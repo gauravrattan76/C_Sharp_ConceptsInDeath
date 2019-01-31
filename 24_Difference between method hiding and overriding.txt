@@ -1,0 +1,89 @@
+24_Difference between overloading and overriding-
+*********************************************************************
+when we say-
+
+parent class p = new child class --- so p in p is the base class refernce variable pointing to the child class.
+
+
+Mthoe hdidng-
+
+base class refernce varibale pointing to the child object will invoke the base class methid hding the child.
+
+we have to use new in front of the method in child class
+
+namespace test
+{
+    public class Parentlass
+    {
+
+        public virtual void Print()
+        {
+            Console.WriteLine("I am the base class version");
+        }
+
+    }
+
+    public class childclass : Parentlass
+    {
+
+        public new void Print()
+        {
+            Console.WriteLine("I am the child class version");
+        }
+
+    }
+    class program
+    {
+        public static void Main()
+        {
+            Parentlass p = new childclass();
+            p.Print();
+            Console.ReadLine();
+
+
+        }
+    }
+
+}
+
+*******************************************************
+Over riding-base class refernce vraibale will over ride the base class m,ethod executing the child class.
+
+
+Method ovrriding-
+
+
+namespace test
+{
+    public class Parentlass
+    {
+
+        public virtual void Print()
+        {
+            Console.WriteLine("I am the base class version");
+        }
+
+    }
+
+    public class childclass : Parentlass
+    {
+
+        public override void Print()
+        {
+            Console.WriteLine("I am the child class version");
+        }
+
+    }
+    class program
+    {
+        public static void Main()
+        {
+            Parentlass p = new childclass();
+            p.Print();
+            Console.ReadLine();
+
+
+        }
+    }
+
+}

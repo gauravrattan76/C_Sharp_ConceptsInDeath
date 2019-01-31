@@ -1,0 +1,81 @@
+74_List_Collection-
+**************************************************************
+List is one of the generic collection classes present i system.collection.generic namespace
+
+There are several generic collection classes present in system.collection.generic namespace-
+1.Dictionary
+2.List
+3.Stack
+4.Queue.
+____________________________________________
+
+List class can be collecton of any type
+
+Objects stored on list can be accesses using index.
+
+Unlike arrays list can grow in size automatically.
+
+there are various methods to search sort and manipuate lists.
+
+******************************************************************
+
+Code-
+
+using System;
+using System.Collections.Generic;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        Customer c1 = new Customer() { Id = 100, Name = "Gaurav", Salary = 12345 };
+        Customer c2 = new Customer() { Id = 101, Name = "Nisha", Salary = 12345 };
+        Customer c3 = new Customer() { Id = 102, Name = "Ravi", Salary = 12345 };
+        Customer c4 = new Customer() { Id = 103, Name = "Dheeraj", Salary = 12345 };
+
+        List<Customer> custlist = new List<Customer>();//Unlike arrays list collection can grow exponentially in size but arrays does not
+        custlist.Add(c1);
+        custlist.Add(c2);
+        custlist.Add(c3);
+        custlist.Add(c4);
+
+           //To access element in the list collection use index
+           Customer cd = custlist[0];//gives the first customer in the list.
+
+        Console.WriteLine(cd.Name);
+
+        foreach (Customer c in custlist)
+        {
+            Console.WriteLine("Id -{0},Name -{1},Salary-{2}", c.Id, c.Name, c.Salary);
+        }
+    }
+}
+
+class Customer
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+
+}
+
+*********************************************************************************************
+
+
+Insert function - To insert an eement ata  specific locaton
+
+
+ custlist.Insert(0, c5);// Inserts the element at the index 0 with the element c5.
+
+        Customer cdr = custlist[0];
+        Console.WriteLine(cdr.Name);
+
+
+
+**************************************************
+
+Indexof-
+
+ Console.WriteLine(custlist.IndexOf(c4));//Give the Index of the element in the list collection.

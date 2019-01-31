@@ -1,0 +1,66 @@
+92_Threadjoin_ThreadLiVE-
+****************************************************
+
+Join - blocks the current thread and makes it wait til the thread on which join method is invoked completes.
+
+we can aslo specify a time out.
+
+Join is usefull when we need to wait and collect result from a thread.
+
+
+IsAlive return true or false...true if the thread is exceuting else false.
+
+*************************************************************
+
+using System;
+using System.Threading;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Main thread started executing");
+
+        Thread T = new Thread(Function1);
+        T.Start();
+
+        Thread Y = new Thread(Function2);
+        Y.Start();
+
+        T.Join();//Main thread waits till Thread 1 is excuted
+        Console.WriteLine("Thread 1 Completed");
+
+        Y.Join();//Mian thread waits till Thread 2 is excuted.
+        Console.WriteLine("Thread 2 completed");
+
+        Console.WriteLine("Main thread completed");
+       
+    }
+
+    public static void Function1()
+    {
+        Console.WriteLine("Thread 1 is excuting");
+    }
+
+    public static void Function2()
+    {
+        Console.WriteLine("Thread 2 is excuting");
+    }
+
+}
+
+
+we can have T.join(1000);//Main thread waits for 1 second.
+
+T.IsAlive - returns a boolean  i.e true or a false.
+
+
+
+**********************************************************************************
+
+
+
+
+

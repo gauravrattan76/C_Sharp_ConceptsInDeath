@@ -1,0 +1,99 @@
+56_Generics-
+****************************************
+Generics allows to design classes and methods decoupled from the data types.
+
+*******************************************************
+Generic classes are used extensivley by collection classes available in system.collections.generic namespace.
+
+******************************************************
+Important-
+
+
+ a method
+ public static void Equal(object a,object b)//object are but classes and hencce refernce types.
+
+calling that method
+
+Equal(10,20)
+
+Issue with this-
+
+we are pssing int so at run time the vaue type are converted to reference type.
+
+So boxing is happening here i.e converting value to reference type.
+
+It will hamper the perfromance.
+
+************************************************
+We use generics-
+as we were perfroming boxing and unboxing
+nd we loose control over the strongly typed nature as we could comprae int with string now.
+
+************************************
+Using generics-
+
+
+using System;
+
+class Program
+{
+
+    public static void Main()
+    {
+        bool res = Customer.AreEqual<string>("ab", "ab");
+        if (res)
+        {
+            Console.WriteLine("Value are equal");
+        }
+        else {
+            Console.WriteLine("values are not equal");
+        }
+
+        
+    }
+}
+
+class Customer
+{
+    public static bool AreEqual<T>(T val1, T val2)//using generic here
+    {
+        return val1.Equals(val2);
+    }
+
+}
+
+***************************************************
+Generics can be used at the class level too
+
+using System;
+
+class Program
+{
+
+    public static void Main()
+    {
+        bool res = Customer<string>.AreEqual("ab", "ab");
+        if (res)
+        {
+            Console.WriteLine("Value are equal");
+        }
+        else {
+            Console.WriteLine("values are not equal");
+        }
+
+        
+    }
+}
+
+class Customer<T>
+{
+    public static bool AreEqual(T val1, T val2)
+    {
+        return val1.Equals(val2);
+    }
+
+}
+
+
+
+

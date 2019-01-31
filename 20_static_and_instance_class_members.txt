@@ -1,0 +1,107 @@
+20_static and instance class members-
+
+****************************************************************************************
+using System;
+
+class Circle
+{
+static double _Pi;//why we had static used here is that no matter how amny instance we create value will be same in memory and initialised using static constructors.
+       int _radius;//intance field
+
+    static Circle()//static constructor   these are intilaesed ven before the normal constructors.
+    {
+        Circle._Pi = 3.1456;
+        Console.WriteLine("static onstructor called");
+    }
+
+   public Circle(int radius)//we need to have publicin front of the name otherwise we cant access it
+    {
+        this._radius = radius;
+        Console.WriteLine("normal constructor called");
+    }
+
+    public double calarea()
+    {
+        return Circle._Pi * this._radius * this._radius;
+    }
+
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Circle c1 = new Circle(3);
+        double d = c1.calarea();
+        Console.WriteLine(d);
+    }
+}
+
+output-
+
+static constructor called.
+instance constructor called.
+the are = 28.148
+*********************************************************
+
+static onctsrutors are called vene  before we access any filed and create any instances.
+
+******************************************************************
+
+using System;
+
+class Circle
+{
+        public static double _Pi;
+       int _radius;
+
+    static Circle()//static constructor   these are intilaesed ven before the normal constructors.
+    {
+        Circle._Pi = 3.1456;
+        Console.WriteLine("static onstructor called");
+    }
+
+   public Circle(int radius)//we need to have publicin front of the name otherwise we cant access it
+    {
+        this._radius = radius;
+        Console.WriteLine("normal constructor called");
+    }
+
+    public double calarea()
+    {
+        return Circle._Pi * this._radius * this._radius;
+    }
+
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine(Circle._Pi);//here the static constructors are called even before we create any instances.
+ 
+}
+**********************************************************************************************************************
+static memers are invoke using class name. 
+circle._pi;
+
+inatmce members are invoked suing instance of the class.
+circle c = new circle();
+c.radius;
+
+*************************
+instance members beong to instance of a classs if we have 3 diffrenet instance of a class we hav e 3 difffrent instance of that mmber
+
+
+here as we have only one copy of static member in memory.
+
+**********************************************
+
+class members-fields,properties,methods,constructors,events etc.
+
+***************************************
+static constructors used to initialies static fields of the class.
+we use a stsc cinstructor using static keyword and they dont have a access modifier
+
+static constructors are aclled befoe indtance constructors.
+

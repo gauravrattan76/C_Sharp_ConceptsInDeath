@@ -1,0 +1,63 @@
+23_Polymorphism-
+
+Basis of polymorphism-
+
+A base class reference variable can point to child class object.
+
+Definition of polyphormism-
+enable us to invoke derived class methods using base class reference variables at run time.
+Allows us to invoke derived class methods usinf base class reference variables at run time.
+ in base class method is declared as virtual and we over ride the method in derived class.
+Virtual keyword means that the method can be overriden at run time.
+
+*********************************
+Code-
+
+using System;
+
+class Employee
+{
+    public string fname = "Gaurav";
+    public string lname = "Rattan";
+    public virtual void printfullname()//use virtual with the class name in the base class
+    {
+        Console.WriteLine(fname + "  " + lname);
+    }
+}
+
+class Pemployee : Employee
+{
+    public override void printfullname()//overrides the method in the base class
+    {
+        Console.WriteLine(fname + "  " + lname + "Permanent Employee");
+    }
+}
+
+class Temployee : Employee
+{
+    public override void printfullname()//overrides the method in the base class at run time.
+    {
+        Console.WriteLine(fname + "  " + lname + "Temporary Employee");
+    }
+}
+
+class Oemployee : Employee
+{
+    
+}
+
+class program
+{
+    public static void Main()
+    {
+        Employee emp = new Pemployee();
+        emp.printfullname();
+
+        Employee emp1 = new Temployee();
+        emp1.printfullname();
+
+        Employee emp2 = new Oemployee();
+        emp2.printfullname();//we get the base class methods
+    }
+}
+

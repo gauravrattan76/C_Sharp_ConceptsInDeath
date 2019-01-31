@@ -1,0 +1,75 @@
+3_Built_in_TYpes_c#
+**************************************************************
+Boolean types- true or false
+integral types- sbyte byte short ushort int uint long ulong char
+floating types- flaot and double
+decimal types
+string types-
+
+
+*****************************************************************8
+sbyte - signed 8 bit integer   range - -128 to 127  signed means it can store negative values.
+
+byte - unsigned means can only store positive values from 0-255.
+
+2 to the power.
+
+
+*********************************************
+
+int.minvlaue - gives the minimum vlaue
+
+int.maxvalue- gives the maximum value-
+
+
+***************************************************************
+
+ C# Data types-
+
+1.Value type
+2.Reference type.
+
+__________________________________________________________________
+Rference type-
+
+Object strings
+classes
+interfaces.
+delegates
+arrays
+
+
+
+___________________________________________________________________
+
+
+Value Types-
+
+
+struct
+enumerations
+
+
+
+
+*************************
+
+struct-
+
+numeric
+bool
+
+
+
+Numeric-
+integral
+ real -float double
+decimal
+
+
+integral-
+
+sbyte,byte,char,short,ushort,int,uint,long,ulong
+
+*********************************************
+

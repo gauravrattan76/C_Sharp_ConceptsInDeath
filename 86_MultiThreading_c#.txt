@@ -1,0 +1,136 @@
+86_Multi Threading in c#-
+***********************************
+
+Process-process is what the operating system uses to facilitate the execution of a program by providing the resouces required.
+
+Each process has a unique process Id,we can see the processwith in which the program is getting executed in windows task manager.
+
+***************************************************************************
+
+Thread-Light weight process. Aprocess has atleast one thread which is called as the main thread which actually executes the application code.A single process can have mutiple threads.
+
+***************************************************
+All threading releated classes are avialable in system.threading namespace.
+***************************************************************
+
+Code -
+
+Issue- application becomes unresponsive if one or teo methods take alot of time.
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Threading;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+
+            DoTimeConsumingWork();
+
+            button1.Enabled = true;
+            button2.Enabled = true;
+        }
+
+        private void DoTimeConsumingWork()
+        {
+            Thread.Sleep(1000);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                listBox1.Items.Add(i);
+            }
+
+        }
+    }
+}
+
+***********************************************************************
+
+Using Threads-
+
+Thread T = new Thread(DoTimeConsumingWork);//creating a thread t whcih will take care of the timesocuming funtion and application will remain responsive.Main thread will be free thus making the application responsive.
+            T.Start();
+
+_______________________________________________________
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Threading;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+
+            Thread T = new Thread(DoTimeConsumingWork);//creating a thread t whcih will take care of the timesocuming funtion and application will remain responsive.Main thread will be free thus making the application responsive.
+            T.Start();
+            
+            button1.Enabled = true;
+            button2.Enabled = true;
+        }
+
+        private void DoTimeConsumingWork()
+        {
+            Thread.Sleep(1000);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                listBox1.Items.Add(i);
+            }
+
+        }
+    }
+}
+
+
+

@@ -1,0 +1,39 @@
+48_Difference between types and type members-
+************************************
+Types-Classes ,structures,interfaces,enums and delegates are called types.
+
+TypeMembers-Fields,Properties,Constructors and methods are called as Type members.
+
+************************************************************
+Total 6 type  of access modifiers-
+1.Public
+2.Private
+3.Private
+4.Protected
+5.Protected Internal
+6.Sealed-Means clas can not be inherited.
+
+***************************
+Type members can have all the access modifiers .
+
+But types ca have two access modifiers i.e Public and internal.
+
+
+********************************************
+
+We can also use regions to arrange our code in amuch better way.
+
+#region Garv1
+Your code
+#region
+
+**************************************
+
+By default Class members are private.
+
+By defalur classes are internal.
+
+
+****************************************
+
+

@@ -1,0 +1,165 @@
+77_Sort_list-
+*****************************************************
+
+using System;
+using System.Collections.Generic;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+
+        List<int> num = new List<int>() { 1, 4, 7, 2, 10, 40, 3, 78 };
+        Console.WriteLine("Before sorting");
+        foreach (int i in num)
+        {
+            Console.WriteLine(i);
+        }
+
+        num.Sort();
+
+        Console.WriteLine("After sorting");
+        foreach (int i in num)
+        {
+            Console.WriteLine(i);
+        }
+
+
+        Customer c1 = new Customer() { Id = 100, Name = "Gaurav", Salary = 12345 };
+        Customer c2 = new Customer() { Id = 101, Name = "Nisha", Salary = 500001 };
+        Customer c3 = new Customer() { Id = 102, Name = "Ravi", Salary = 12345 };
+        Customer c4 = new Customer() { Id = 103, Name = "Dheeraj", Salary = 12345 };
+        Customer c5 = new Customer() { Id = 104, Name = "Rocky", Salary = 5000000 };
+        Customer c6 = new Customer() { Id = 105, Name = "Denver", Salary = 5000000 };
+        Customer c7 = new Customer() { Id = 106, Name = "Jimmy", Salary = 5000000 };
+
+        List<Customer> custlist = new List<Customer>();
+        custlist.Add(c1);
+        custlist.Add(c2);
+        custlist.Add(c3);
+        custlist.Add(c4);
+        custlist.Add(c5);
+
+
+
+        List<Customer> cstl = custlist.GetRange(2, 2);
+       
+        
+
+        foreach (Customer c in cstl)
+        {
+            Console.WriteLine(c.Name);
+        }
+    }
+}
+
+class Customer
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+
+}
+
+GIVES THE result in ascending order-
+****************************************************************
+
+If you want in descending order the use reverse method-
+
+using System;
+using System.Collections.Generic;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+
+        List<int> num = new List<int>() { 1, 4, 7, 2, 10, 40, 3, 78 };
+        Console.WriteLine("Before sorting");
+        foreach (int i in num)
+        {
+            Console.WriteLine(i);
+        }
+
+        num.Reverse();
+
+        Console.WriteLine("After sorting");
+        foreach (int i in num)
+        {
+            Console.WriteLine(i);
+        }
+
+
+        Customer c1 = new Customer() { Id = 100, Name = "Gaurav", Salary = 12345 };
+        Customer c2 = new Customer() { Id = 101, Name = "Nisha", Salary = 500001 };
+        Customer c3 = new Customer() { Id = 102, Name = "Ravi", Salary = 12345 };
+        Customer c4 = new Customer() { Id = 103, Name = "Dheeraj", Salary = 12345 };
+        Customer c5 = new Customer() { Id = 104, Name = "Rocky", Salary = 5000000 };
+        Customer c6 = new Customer() { Id = 105, Name = "Denver", Salary = 5000000 };
+        Customer c7 = new Customer() { Id = 106, Name = "Jimmy", Salary = 5000000 };
+
+        List<Customer> custlist = new List<Customer>();
+        custlist.Add(c1);
+        custlist.Add(c2);
+        custlist.Add(c3);
+        custlist.Add(c4);
+        custlist.Add(c5);
+
+
+
+        List<Customer> cstl = custlist.GetRange(2, 2);
+       
+        
+
+        foreach (Customer c in cstl)
+        {
+            Console.WriteLine(c.Name);
+        }
+    }
+}
+
+class Customer
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+
+}
+
+
+************************************************
+
+Sorting Strings-
+
+ List<string> str = new List<string>() { "B", "Z", "A", "O", "P" };
+        Console.WriteLine("Before sorting");
+        foreach (string i in str)
+        {
+            Console.WriteLine(i);
+        }
+
+        str.Sort();
+        Console.WriteLine("After sorting");
+        foreach (string i in str)
+        {
+            Console.WriteLine(i);
+        }
+
+**********************************************************
+
+Sorting Complex Types-
+
+If we apply sort on complex types we get exception at rutime.Invalidoperation exception-
+
+This is because .Net runtime doesnt know how to sort complex types.
+
+The way we sort complex type is by implementing the Icomparable Interface
+
+Sorting functionality works for simples types ike int string etc because thses types have implemented Icomparable interface already.
+
+************************************************************************************8
+

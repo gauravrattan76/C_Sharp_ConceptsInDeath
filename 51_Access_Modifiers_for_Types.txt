@@ -1,0 +1,11 @@
+51_Access Modifiers for Types-
+*******************************
+
+We have 2 types of modifiers for Types.
+Internal and Public.
+
+By default classes are internal
+
+******************************
+
+By defualt type members are private.

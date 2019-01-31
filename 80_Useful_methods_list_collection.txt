@@ -1,0 +1,49 @@
+80_Useful_methods_list_collection-
+************************************************************
+
+TrueForAll()-
+
+ retruns true or false if every element in the list matches the conditions.
+
+Console.WriteLine("does it meet the criteria" + custlist.TrueForAll(x => x.Salary > 100));
+
+Returns True.
+
+
+**************************************************************
+AsReadOnly()-
+
+Returns a read only wrapper for the current collection. use this method when we dont want the client code to modify the collection i.e add or remove any elements from the collection.
+
+
+its present in the namespace-
+
+using System.Collections.ObjectModel;//namespace hwre eit is present.
+
+
+ ReadOnlyCollection<Customer> rdon = custlist.AsReadOnly();
+        rdon.ad//we dont get add or remove functionality here.
+
+
+
+*******************************************************************************
+
+Trimexcess-
+
+sets the capacity to the actual umber of elements in the list. It gives the capacity that is the actuual number of elements in the list.
+
+
+ List<Customer> custlist = new List<Customer>(100);//capacity is 100
+        custlist.Add(c1);
+        custlist.Add(c2);
+        custlist.Add(c3);
+        custlist.Add(c4);
+        custlist.Add(c5);
+
+
+        Console.WriteLine("Capacity {0}", custlist.Capacity);
+
+        custlist.TrimExcess();//trims all the xtra elements places.
+
+        Console.WriteLine("After trimming {0}", custlist.Capacity);
+

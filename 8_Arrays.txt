@@ -1,0 +1,24 @@
+8_Arrays-
+
+
+int[] evennumbers = new int[3];
+evennumbers[0]=1;
+evennumbers[1]=2;
+evennumbers[2]=3;
+
+***********************************
+
+int[] evennumbers = {1,2,3,4}
+
+
+************************************************
+Advantages-
+Are strongly typed.
+means that we cant assign string to that array now.
+
+
+Disadvantage-
+
+Array can not grow in siw when initialised.
+have to rely on integral indices to get the itm.
+

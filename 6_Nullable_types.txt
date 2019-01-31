@@ -1,0 +1,18 @@
+6_Nullable Types-
+
+In c# types are divided into 2 types-
+
+value types-int,float,double,struct,enums etc.
+
+reference types-strings,classes,interfaces,delegates.
+
+*******************************************************
+
+By default value types are not nullable.
+
+int i=0;(i is non nullable,so if we assign i to 0 we get compile time error).
+
+int? j=0;(so here we are making the integer as nullable type.)
+
+********************************************************
+

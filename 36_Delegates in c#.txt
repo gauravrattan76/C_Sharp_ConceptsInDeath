@@ -1,0 +1,29 @@
+36_Delegates in c#-
+***************************************
+1.delegates are type safe function providers.
+2.they hold a reference to a function or we can say that pointer to a function.
+3.Signature of a delegate should match to that of the fuction otherwise we get the compile tim error.
+4.its simlar to a class we can create instance of it and then we can pass the function name as a parameter that is the function it points too.
+
+
+**************************************************
+Code-
+
+
+using System;
+
+public delegate void Mydelegate(string text);//delegate are type safe as its hould match the method signature
+class Program
+{
+    public static void Main()
+    {
+        Mydelegate md = new Mydelegate(Print);//creating instance of the delegate
+        md("Gaurav Rattan");//passing value to the delegate
+    }
+
+    public static void Print(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+}

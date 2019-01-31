@@ -1,0 +1,44 @@
+44_Exception Handling abuse handeled-
+
+************************************
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Please enter the first naumber");
+        int fnum;
+        bool fnumber = int.TryParse(Console.ReadLine(),out fnum);//try parse will store the result in out fnum and bool fnumbaer will return true or false .
+        if (fnumber)
+        {
+            Console.WriteLine("Please enter the Second naumber");
+            int Snum;
+            bool Snumber = int.TryParse(Console.ReadLine(), out Snum);
+            if (Snumber)
+            {
+                if (Snum == 0)
+                {
+                    Console.WriteLine("Denomainator can not be 0");
+
+                }
+                else
+                {
+                    int result = fnum / Snum;
+                    Console.WriteLine("Result is {0}", result);
+                }
+
+            }
+            else {
+                Console.WriteLine("Please enter a valid second number");
+            }
+
+        }
+        else
+        {
+            Console.WriteLine("Please enter a valid first Naumber");
+        }
+
+    }
+
+}

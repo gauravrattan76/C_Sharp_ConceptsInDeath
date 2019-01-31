@@ -1,0 +1,153 @@
+19_Classes-
+******************************************
+classes are use to create complex custom types-
+*****************************************************
+
+class members are private by default.
+classes are internal by default that means the are accessible with in the assembly.
+*******************************************
+The purpose of the constructor is to initialie the class fileds.
+constructor is called when an instance of  class created
+
+constructordo not have return values and always the same name of the class.
+can be overloaded by nuber and type of parameters.
+
+using System;
+class Customer//My Class
+{
+    string _fname;//fields
+    string _lname;//fields
+
+    public Customer(string fname, string lname)//using Parametrised constructor.
+    {
+        this._fname = fname;//this kyword refers to the instance/object of the class.
+        this._lname = lname;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine("Fullname ={0}", this._fname + " " + this._lname);
+    }
+
+    ~Customer()
+    {
+
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer("Gaurav", "Rattan");
+        C1.Print();
+
+    }
+}
+
+*************************************************************************8
+Using non parameterised constructor-
+
+using System;
+class Customer
+{
+    string _fname;//fields
+    string _lname;//fields
+
+    public Customer()//Not Parametrise constructor
+    {
+        this._fname = "Gaurav";//this kyword refers to the instance/object of the class.
+        this._lname = "Rattan";
+    }
+
+    public void Print()
+    {
+        Console.WriteLine("Fullname ={0}", this._fname + " " + this._lname);
+    }
+
+    ~Customer()
+    {
+
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.Print();
+
+    }
+}
+
+*************************************************************************
+
+Note-If we dont supply a construcctor in class c# will provide a default parametrised constrctor.
+
+once we provide our own constructor c# takes away defaoult parametrised constructor.
+
+
+**********************************************************************************
+
+How to use default constructor if we have a parametrised declared-
+
+using System;
+class Customer
+{
+    string _fname;//fields
+    string _lname;//fields
+
+    public Customer() : this ("garvy","Rattany")//will display the message when we call the default constructor.
+    {
+    }
+
+    public Customer(string fname,string lname)
+    {
+        this._fname =fname;//this kyword refers to the instance/object of the class.
+        this._lname =lname;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine("Fullname ={0}", this._fname + " " + this._lname);
+    }
+
+    ~Customer()
+    {
+
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.Print();
+
+    }
+}
+
+*********************************************
+
+Deconstrutors have the same name ofthe class with ` symbol.
+
+dont take any parameters.
+
+in decsonsturctorswe can place the code to release memory and any resources classed were holding.
+
+deconstructors are called when c# garbage collecton decides to clean object from memory.
+
+
+
+
+
+
+
+
+
+
+
+
+

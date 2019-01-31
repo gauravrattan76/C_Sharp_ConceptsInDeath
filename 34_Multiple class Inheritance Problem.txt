@@ -1,0 +1,51 @@
+34_Multiple Class inhertitance Problem-
+
+*******************************************************
+1.Class B and Class c inherit from class A.
+2.Class d inherits from b and c.
+
+
+****************************
+Code-
+
+using System;
+
+class A
+{
+    public virtual void Print()
+    {
+        Console.WriteLine("From Class A");
+    }
+}
+
+class B : A
+{
+    public override void Print()//B over rides the method in a
+    {
+        Console.WriteLine("This is the overriden method IN CLASS B");
+    }
+}
+
+class C : A
+{
+    public override void Print()//C over rides the method in a
+    {
+        Console.WriteLine("This is the overriden method IN CLASS C");
+    }
+
+}
+
+class D : B,C
+{
+
+}
+
+class Program
+{
+public static void Main()
+    {
+
+        D d = new D();
+        d.Print();//we dont know which over riden method gets called.
+    }
+}

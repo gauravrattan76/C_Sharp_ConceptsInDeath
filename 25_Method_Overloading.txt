@@ -1,0 +1,56 @@
+25_Method Overloading-
+
+Function overloading and method overloading are intercahngeably used.
+
+****************************************
+
+Method overloading allows a class to have multiple methods with the same name but different signatures.
+
+in c# function are overloaded on the basis of method signatures.
+*******************************************
+Signature of a method include-
+name of the method
+Number of parameters.
+type of parameters(int,float)
+kind of(value.ref,out)
+
+*****************************************
+
+sigmature of a method doesnt include return type and accceess modifier.
+
+***********************************************
+
+we can have methods with the same name but with the different signatures
+
+
+signature of a metjod- name of the methods,number of aparmerets,type of, kind of
+
+type of - int float
+kind -value,ferenece out
+
+
+namespace test
+{
+    
+    class program
+    {
+        public static void Main()
+        {
+            int d =sum(2, 3);
+            Console.WriteLine(d);
+            Console.ReadLine();
+
+
+        }
+
+        public static int sum(int a, int b)
+        {
+            return a + b;
+        }
+        public static int sum(int a, int b,int c)
+        {
+            return a + b+c;
+        }
+    }
+
+}

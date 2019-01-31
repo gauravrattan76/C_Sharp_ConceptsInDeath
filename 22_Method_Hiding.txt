@@ -1,0 +1,155 @@
+22_Method Hiding in c#-
+***************************************
+
+
+
+using System;
+
+class Employee
+{
+    public string Fname;
+    public string Lname;
+
+    public void Print()
+    {
+      Console.WriteLine(Fname + " " + Lname);
+    }
+}
+
+class Pemployee : Employee
+{
+    public void Print()//This method will hide the method in the prent class.  use new to remove warnings.
+    {
+        Console.WriteLine(Fname + " " + Lname + "-from child class");
+    }
+}
+
+class program
+{
+    public static void Main()
+    {
+        Pemployee pemp = new Pemployee();
+        pemp.Fname = "Gaurav";
+        pemp.Lname = "Rattan";
+        pemp.Print();
+    }
+}
+
+output-
+gaurav rattan-child class
+
+********************************************************************
+
+3 ways to call the hidden methods -
+create parent class refernce variable
+use base.parentmethodname in the base method implementation.
+typecastre the object of parent type
+((Employee)Pemp).print()
+***************************************************
+
+using System;
+
+class Employee
+{
+    public string Fname;
+    public string Lname;
+
+    public void Print()
+    {
+      Console.WriteLine(Fname + " " + Lname);
+    }
+}
+
+class Pemployee : Employee
+{
+    public new void Print()
+    {
+        Console.WriteLine(Fname + " " + Lname + "-from child class");
+    }
+}
+
+class program
+{
+    public static void Main()
+    {
+        Employee pemp = new Pemployee();
+        pemp.Fname = "Gaurav";
+        pemp.Lname = "Rattan";
+        pemp.Print();
+    }
+}
+
+output=
+wilbe gaurva rattan as base class refernce variable pointing to the child object.
+*******************************
+
+using System;
+
+class Employee
+{
+    public string Fname;
+    public string Lname;
+
+    public void Print()
+    {
+      Console.WriteLine(Fname + " " + Lname);
+    }
+}
+
+class Pemployee : Employee
+{
+
+    public new void Print()
+    {
+        base.Print();//inside the method use bas.parent method name.
+        //Console.WriteLine(Fname + " " + Lname + "-from child class");
+    }
+}
+
+class program
+{
+    public static void Main()
+    {
+        Pemployee pemp = new Pemployee();
+        pemp.Fname = "Gaurav";
+        pemp.Lname = "Rattan";
+        pemp.Print();
+    }
+}
+
+***************************************************
+3rd methods of typecasting the refrence variable-
+
+using System;
+
+class Employee
+{
+    public string Fname;
+    public string Lname;
+
+    public void Print()
+    {
+      Console.WriteLine(Fname + " " + Lname);
+    }
+}
+
+class Pemployee : Employee
+{
+
+    public new void Print()
+    {
+      
+        Console.WriteLine(Fname + " " + Lname + "-from child class");
+    }
+}
+
+class program
+{
+    public static void Main()
+    {
+        Pemployee pemp = new Pemployee();
+        pemp.Fname = "Gaurav";
+        pemp.Lname = "Rattan";
+        ((Employee)pemp).Print();//Type casting
+    }
+}

@@ -1,0 +1,48 @@
+57_Why we should override to string method-
+***********************************************
+using System;
+
+class Program
+{
+
+    public static void Main()
+    {
+
+        Customer c = new Customer();
+        Console.WriteLine(c.ToString());//If we dont over ride we get the default Implementation and we get the class name.We get Gaurav Rattan
+        
+    }
+}
+
+class Customer
+{
+    public string fname = "Gaurav";
+    public string Lname = "Rattan";
+
+    public override string ToString()//over riding the to string method and we get our required data.
+    {
+        return this.fname + " " + this.Lname;
+    }
+}
+
+*************************************************************
+
+class Program
+{
+
+    public static void Main()
+    {
+
+        Customer c = new Customer();
+        Console.WriteLine(c.ToString());//we get the namespace with the class name.
+        
+    }
+}
+
+class Customer
+{
+    public string fname = "Gaurav";
+    public string Lname = "Rattan";
+
+   
+}

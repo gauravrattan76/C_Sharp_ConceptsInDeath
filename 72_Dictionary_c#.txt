@@ -1,0 +1,59 @@
+72_Dictionary_c#-
+*******************************************
+
+Dictionary is a collection of key value pairs.
+dictionry class is present in system.collection.generic namespace.
+
+when creating a dictionary we need to specify the type for key and value.
+
+dictionary provides fast look up for values using the keys.
+
+Keys in dcitionary must be unique.
+
+If we try to add the item with sam ky as prevoius one we get argument exception that is item with the same key is present in the dictionary
+
+we can use containskey method to check the same.
+
+************************************************
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+        Customer cust1 = new Customer() { Id = 1, Name = "Gaurav", Salary = 1000 };
+        Customer cust2 = new Customer() { Id = 2, Name = "John", Salary = 10200 };
+        Customer cust3 = new Customer() { Id = 3, Name = "Mohit", Salary = 13000 };
+        Customer cust4 = new Customer() { Id = 4, Name = "Neeraj", Salary = 41000 };
+
+
+        Dictionary<int, Customer> dictionarycust = new Dictionary<int, Customer>();//specifying the type for the key and the value.
+        dictionarycust.Add(cust1.Id, cust1);
+        dictionarycust.Add(cust2.Id, cust2);
+        dictionarycust.Add(cust3.Id, cust3);
+        dictionarycust.Add(cust4.Id, cust4);
+
+
+        foreach (KeyValuePair<int, Customer> dic in dictionarycust)
+        {
+            Console.WriteLine(dic.Key);
+            var cus = dic.Value;
+            Console.WriteLine("Name -{0}, Salary -{1}",cus.Name,cus.Salary);
+        }
+
+    }
+
+
+}
+
+class Customer
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+}
+
+
+

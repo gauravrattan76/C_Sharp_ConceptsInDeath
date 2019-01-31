@@ -1,0 +1,45 @@
+67_Optional_Parameters-
+***********************************************
+1. Use parameter arrays.
+2.Method Overloading
+3.Specifying parameters defaults.
+4.Use optional attributes present in system.runtime.interopservices.namespace.
+********************************************************************
+
+
+Parameter arrays-
+Parameter arrays should be the last element in the array.
+
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+     int res=   AddNumbers(10, 20,30,40,90);
+        Console.WriteLine(res);
+    }
+
+    public static int AddNumbers(int a, int b, params object[] numbers)
+    {
+        int result = a + b;
+        if (numbers != null)
+        {
+            foreach (int i in numbers)
+            {
+                result += i;
+            }
+
+
+            
+        }
+
+        return result;
+    }
+
+}
+
+*******************************************************

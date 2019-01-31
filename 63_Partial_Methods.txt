@@ -1,0 +1,29 @@
+63_Partial_Methods-
+***************************************************************************
+A partial class or a struct contain partial methods
+
+Partial method is created using partial keyword.
+
+
+
+A partial method declaration consist of 2 parts-
+1.definition
+2.Implementation
+both may be present in in a same or different files.
+
+
+Implementation of the partial method is optional if we dont provide the implementation then compiler removes the signature and aall calls to the methods.
+
+Partial methods r private by defaults and we get error if we try to add access modifiers.
+
+Compile time error if we include declration and implemnetation at the same time.
+
+Partial method return type must be void including another retirn type is a compile time error.
+
+Signature of the partial method declarton shoould mtch the implementaton
+
+A partial method should be declared in a partial class or partial struct.
+
+A partial method can be implementedonly one if we try to implement more thn once we get compile time error
+
+*********************************************************************************

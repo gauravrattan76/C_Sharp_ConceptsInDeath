@@ -1,0 +1,62 @@
+58_Why we need to over ride to Equlas method-
+********************************************
+
+==//stands for reference equality
+.equals//stands for value equality.
+
+______________________________________________________
+Important point-
+
+If reference equality is treu we have value equality
+
+Value equality doesnt guaranty reference equality.
+
+************************************************************
+
+using System;
+
+class Program
+{
+
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.fname = "Gaurav";
+        C1.Lname = "Rattan";
+
+        Customer C2 = new Customer();
+        C2.fname = "Gaurav";
+        C2.Lname = "Rattan";
+
+        Console.WriteLine(C1 == C2);//reference equality
+        Console.WriteLine(C1.Equals(C2));//value equality
+        
+    }
+}
+
+class Customer
+{
+    public string fname { get; set; }
+    public string Lname { get; set; }
+
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+
+        else if (!(obj is Customer))
+        { return false; }
+
+        else
+        {
+            return this.fname == ((Customer)obj).fname && this.Lname == ((Customer)obj).Lname;
+        }
+    }
+    public override int GetHashCode()//To remove the warning we have to over ride the hash code.
+    {
+        return this.fname.GetHashCode() ^ this.Lname.GetHashCode();
+    }
+
+}

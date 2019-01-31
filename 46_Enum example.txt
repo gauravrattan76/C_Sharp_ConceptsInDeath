@@ -1,0 +1,76 @@
+46_Enum exapmle-
+
+***************************
+
+create enum using enum keyword-
+
+public enum Gender
+{
+  Male,
+  Female,
+  Unknown
+}
+
+so code is better readabl and maintenable.
+
+******************************
+
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    public static void Main()
+    {
+        List<Customer> custlist = new List<Customer>();
+        custlist.Add(new Customer()
+        {
+            Name = "Gaurav Rattan",
+            Gender = Gender.Male//using Enum here
+        });
+        custlist.Add(new Customer()
+        {
+            Name = "Manjuri",
+            Gender = Gender.Female
+        });
+        custlist.Add(new Customer()
+        {
+            Name = "Rashi",
+            Gender = Gender.Unknown
+        });
+
+
+        foreach (Customer cst in custlist)
+        {
+            Console.WriteLine("Name of Customer ={0} and Gender of Customer ={1}", cst.Name, Program.Getgender(cst.Gender));
+        }
+
+    }
+
+    public static string Getgender(Gender number)
+    {
+        switch (number)
+        {
+            case Gender.Male: return "Male";
+            case Gender.Female: return "Female";
+            case Gender.Unknown: return "Unknown";
+            default: return "Invalid Gender";
+
+        }
+
+    }
+
+}
+
+public enum Gender//creating Enum
+{
+  Male,
+  Female,
+  Unknown
+}
+public class Customer
+{
+    public string Name { get; set; }
+    public Gender Gender { get; set; }//Chagning the data type here
+}

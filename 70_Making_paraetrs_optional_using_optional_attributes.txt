@@ -1,0 +1,37 @@
+70_Making_paraetrs_optional_using_optional_attributes-
+**********************************************************
+
+Optional attribute is prenet in system.runtime.interop.services.
+
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+
+class Program
+{
+    public static void Main()
+    {
+     AddNumbers(10, 20);
+      
+    }
+
+
+    public static void AddNumbers(int a, int b,[Optional] int[] numbers)//using optional attribute
+    {
+        int result = a + b;
+        if (numbers != null)
+        {
+            foreach (int i in numbers)
+            {
+                result += i;
+            }
+
+
+            
+        }
+        Console.WriteLine("Result is {0}", result);
+    }
+
+}
+
+*****************************************************

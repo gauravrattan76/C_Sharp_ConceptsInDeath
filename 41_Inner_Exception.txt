@@ -1,0 +1,80 @@
+41_Inner Excepetion in c#-
+**********************************
+
+Always check if inner exception is not null else we get a null reference xception.
+
+
+using System;
+using System.IO;
+
+class Program
+{
+    public static void Main()
+    {
+        try{ 
+        try
+        {
+            Console.WriteLine("Please enter the first Number");
+            int fnum = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Please enter the Second Number");
+            int Snum = Convert.ToInt16(Console.ReadLine());
+
+            int result = fnum / Snum;
+            Console.WriteLine("Result is {0}", result);
+        }
+
+        catch (Exception ex)
+        {
+            string filepath = "C:\\Gaurav\\te.txt";
+            if (File.Exists(filepath))
+            {
+                StreamWriter sw = new StreamWriter(filepath);
+                sw.Write(ex.GetType().Name);
+                sw.WriteLine();
+                sw.Write(ex.Message);
+                sw.WriteLine();
+                sw.Write(ex.StackTrace);
+                Console.WriteLine(ex.GetType().Name);
+            }
+            else
+            {
+                throw new Exception(filepath + "File not found exception", ex);//so file nt found is the current exception
+            }
+
+
+        }
+    }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine("Current exception is {0}", ex.Message);
+            Console.WriteLine();
+            Console.WriteLine("Inner exception is {0}", ex.InnerException.Message);//original exception will be the Innner exception.
+        }
+
+
+    }
+
+}
+******************************************
+Always check if inner exceptions are not null other wise we will get null reference xception-
+
+   else
+            {
+                throw new Exception(filepath + "File not found exception");//If we donot pass the inner exception
+            }
+
+
+        }
+    }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine("Current exception is {0}", ex.Message);
+            Console.WriteLine();
+            if (ex.InnerException != null)//we will get null here
+            {
+                Console.WriteLine("Inner exception is {0}", ex.InnerException.Message);
+            }
+        }

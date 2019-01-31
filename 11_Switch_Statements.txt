@@ -1,0 +1,76 @@
+11_Switch_Statements-
+*****************************************************
+Multiple if else statement can be replaced by switch statements.
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Please enter the number");
+        int number = int.Parse(Console.ReadLine());
+
+        switch (number)
+        {
+            case 10:
+                Console.WriteLine("You have eneterd 10");
+                break;
+            case 20:
+                Console.WriteLine("You have eneterd 20");
+                break;
+            case 30:
+                Console.WriteLine("You have eneterd 30");
+                break;
+            default:
+                Console.WriteLine("default case");
+                break;
+
+
+
+
+        }
+    }
+
+
+}
+
+***********************************************************
+
+Joining Multiple switch statement-
+
+
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Please enter the number");
+        int number = int.Parse(Console.ReadLine());
+
+        switch (number)
+        {
+            case 10:
+             
+            case 20:
+           
+            case 30:
+                Console.WriteLine("You have eneterd {0}",number);//This gets executed for all the three cases.
+                break;
+            default:
+                Console.WriteLine("default case");
+                break;
+
+
+
+
+        }
+    }
+
+
+}
+
+
+

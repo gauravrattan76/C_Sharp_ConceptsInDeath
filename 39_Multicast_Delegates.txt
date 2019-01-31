@@ -1,0 +1,99 @@
+39_MultiCast Delegates-
+************************************
+A multi cast delegate is a delegate havig reference to more than one funtion.
+when you invoke a multicast  delegate all the functions that delegate is pointed to gets invoked.
+
+Multicas delegate invoke the methods in the invokation list in the same order they were added.
+
+If delegate has return type other tan void if the delegat is a multiple cas deegeate then only value of the last invoked method will be returned.
+
+If the delegte has a output parameter than value of the output parameter will be the value assigned by the last method.
+
+********************************************************************
+
+If we had just 1 method-
+
+using System;
+
+public delegate void mydelegate();
+
+class Program
+{
+    public static void Main()
+    {
+        mydelegate del = new mydelegate(Print1);
+        del();
+
+    }
+    public static void Print1()
+    {
+        Console.WriteLine("Method 1");
+    }
+
+}
+
+***********************************************************
+If we had more than one method-
+
+using System;
+
+public delegate void mydelegate();
+
+class Program
+{
+    public static void Main()
+    {
+        mydelegate del1, del2, del3, del4;//create 4 instance of the delegate and then point to the methods and then chain the delegates.
+        del1 = new mydelegate(Print1);
+        del2 = new mydelegate(Print2);
+        del3 = new mydelegate(Print3);
+        del4 = del1 + del2 + del3;
+        del4();
+
+    }
+    public static void Print1()
+    {
+        Console.WriteLine("Method 1");
+    }
+    public static void Print2()
+    {
+        Console.WriteLine("Method 2");
+    }
+    public static void Print3()
+    {
+        Console.WriteLine("Method 3");
+    }
+
+}
+
+*******************************************
+another way-
+
+using System;
+
+public delegate void mydelegate();
+
+class Program
+{
+    public static void Main()
+    {
+        mydelegate del = new mydelegate(Print1);//same reference variable pointing to the multiple methods.
+        del += Print2;
+        del += Print3;
+        del();
+
+    }
+    public static void Print1()
+    {
+        Console.WriteLine("Method 1");
+    }
+    public static void Print2()
+    {
+        Console.WriteLine("Method 2");
+    }
+    public static void Print3()
+    {
+        Console.WriteLine("Method 3");
+    }
+
+}

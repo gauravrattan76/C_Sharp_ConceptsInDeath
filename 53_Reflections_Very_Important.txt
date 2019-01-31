@@ -1,0 +1,108 @@
+53_Reflection
+**********************************************
+Reflection is the ability to inspect an assembly metadata at runtime.Used to find all types in an assembly or dynamicallly invke methods in assembly.
+
+*******************************************
+When we drag and drop a button on win forms the property window uses reflection to show all the propwerties of the button class.
+*******************************************
+
+Late binding can be achieved by reflection.we can use reflection to dynamically crete aninstance of atype about which we dont have any information at compile time.So reflection enables you to use code that is not available at compile time.
+
+**************************************************
+When we compile a class they are compiled into intermediate language and packaged as assembly.
+
+Assembly contains two part-
+1.Intermediate language.
+2.Meta data-Contains information about types and type members.
+************************************
+Reflection takes an assembly and helps in finding the assembly meta data i.e type and type members.
+
+*********************************************************************
+
+Early Binding vs Late Binding-
+
+Eearly Binding- at compile time when we have information about the class type members we can create instance of it.
+
+Late Binding-we dont have information about the class and creating the instance of it at runtime.
+
+****************************************************************************
+
+Code-
+
+using System;
+using System.Reflection;
+
+namespace Gaurav
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Type T = Type.GetType("Gaurav.Customer");//Type is a class where we use gettype method and pass the fully qualified name to it.
+            //we can use Type T = typeof(Customer);
+
+            // customer c1 = new customer and then Type t=t.gettype(c1);
+            Console.WriteLine(T.FullName);
+            Console.WriteLine(T.Name);
+            Console.WriteLine(T.Namespace);
+
+
+            //To get properties
+            PropertyInfo[] properties = T.GetProperties();
+
+            foreach (PropertyInfo p in properties)
+            {
+                Console.WriteLine(p.PropertyType.Name + " -" + p.Name);
+            }
+
+            //To get methods
+            MethodInfo[] methods = T.GetMethods();
+
+            foreach (MethodInfo m in methods)
+            {
+                Console.WriteLine(m.ReturnType.Name + " -" + m.Name);
+            }
+
+            //to get Constructors
+
+         ConstructorInfo[] constructors =  T.GetConstructors();
+            foreach (ConstructorInfo c in constructors)
+            {
+                Console.WriteLine(c.ToString());
+            }
+        }
+    }
+
+    class Customer
+    {
+        int _Id;
+        string _Name;
+
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public Customer(int Id,string Name)
+        {
+            this._Id = Id;
+            this._Name = Name;
+        }
+
+        public Customer()
+        {
+            this._Id = 1;
+            this._Name = "Gaurav";
+        }
+
+        public void PrintId()
+        {
+            Console.WriteLine("Id is {0}",this._Id);
+        }
+
+        public void PrintName()
+        {
+            Console.WriteLine("Name is {0}", this._Name);
+        }
+    }
+}
+
+

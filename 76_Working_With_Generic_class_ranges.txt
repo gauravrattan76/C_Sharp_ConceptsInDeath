@@ -1,0 +1,76 @@
+76_Working_With_Generic_class_ranges-
+***************************************************************
+AddRange()- Add method allows us to add one item at the end of the list.
+
+AddRange- allows us to add nother list of items at the end of the list.
+
+Customer c1 = new Customer() { Id = 100, Name = "Gaurav", Salary = 12345 };
+        Customer c2 = new Customer() { Id = 101, Name = "Nisha", Salary = 500001 };
+        Customer c3 = new Customer() { Id = 102, Name = "Ravi", Salary = 12345 };
+        Customer c4 = new Customer() { Id = 103, Name = "Dheeraj", Salary = 12345 };
+        Customer c5 = new Customer() { Id = 104, Name = "Rocky", Salary = 5000000 };
+        Customer c6 = new Customer() { Id = 105, Name = "Denver", Salary = 5000000 };
+        Customer c7 = new Customer() { Id = 106, Name = "Jimmy", Salary = 5000000 };
+
+        List<Customer> custlist = new List<Customer>();
+        custlist.Add(c1);
+        custlist.Add(c2);
+        custlist.Add(c3);
+        custlist.Add(c4);
+        custlist.Add(c5);
+
+
+
+        List<Customer> cstl = new List<Customer>();
+        cstl.Add(c6);
+        cstl.Add(c7);
+
+        custlist.AddRange(cstl);// adds a range of element at the end of the list
+        
+
+        foreach (Customer c in custlist)
+        {
+            Console.WriteLine(c.Name);
+        }
+***************************************************************88
+
+GetRange()-
+
+Using Item index we can get only one element custlit[0]
+
+GetRange(2,3)//It will get 3 emenets from th 2nd index
+
+Code-
+
+   List<Customer> cstl = custlist.GetRange(2, 2);
+       
+        
+
+        foreach (Customer c in cstl)
+        {
+            Console.WriteLine(c.Name);
+        }
+
+
+****************************************************
+
+InsertRange()-Insert method allow you to insert a single element into the list at a specifed index where as insert range allows you toinsert a lsit of items at the specified index.
+
+custlist.InsertRange(1,Custli);
+
+*************************************************************8
+
+Remove Range(-
+
+
+Remove()- functions removes the firt matching element from the list
+
+Custlist.Remove(c1);
+
+RemoveAt()-Removes element at the specified index.
+
+RemoveAll- Removes all the element matching the conditions
+
+RemoveRang-Removes range of element from the ist.expects 2 parameters first index and then second the number of items to be reomved.
+
+Clear()-Remove all the elements from the list.

@@ -1,0 +1,64 @@
+26_Why we need properties-
+
+marking the properties public is bad because we dont have any control on what gets assigned.
+points-
+Id should not be negative
+name can not be null
+passmark should be read only
+
+*************************************
+
+using System;
+class Employee
+{
+    int _Id;
+    string _Name;
+    int _Passmark =35;
+
+
+    public int Id
+    {
+        get {return this._Id; }
+
+        set {
+            if (value < 0)
+            {
+                throw new Exception("Value can not be -ve");
+            }
+            else
+            {
+                this._Id = value;
+            }
+        }
+    }
+    public string Name
+    {
+        set {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("namecan not be null");
+            }
+            else { this._Name = value; }
+        }
+        get { return this._Name; }
+
+    }
+
+    public int Passmark {
+        get { return this._Passmark; }
+    }
+
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Employee emp = new Employee();
+        emp.Id = 23;//system exception value can not be null
+        emp.Name = "";//system exception name can not be null
+        //emp.Passmark;
+    }
+}
+
+***************************************************************************

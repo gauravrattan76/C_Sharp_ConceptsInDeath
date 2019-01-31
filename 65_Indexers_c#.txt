@@ -1,0 +1,66 @@
+65_Indexers_c#-
+****************************************************
+Use this keyword to create Indexers.
+
+Just like properties indexers have getters and setters.
+
+Indexers can also be overloaded.
+
+_____________________________________________________
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+        Customer cust = new Customer();
+        string name = cust[1];//calling indexers.
+        Console.WriteLine("name is {0}", name);
+        cust[1] = "Rashim";
+        Console.WriteLine("name is {0}", cust[1]);
+
+    }
+
+
+}
+
+public class Employee//class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+}
+
+ class Customer//class Customer
+{
+    private List<Employee> lemp;
+
+    public Customer()
+    {
+        lemp = new List<Employee>();
+        lemp.Add(new Employee { Id = 1, Name = "Gaurav", Salary = 1234 });
+        lemp.Add(new Employee { Id = 2, Name = "Rattan", Salary = 3456 });
+        lemp.Add(new Employee { Id = 3, Name = "Ravi", Salary = 3467 });
+        lemp.Add(new Employee { Id = 4, Name = "German", Salary = 9874 });
+
+
+    }
+//***************************************************************************************
+    public string this[int Id]// creating Indexers using this keyword and it has a getter and setter
+    {
+        get {
+            return lemp.Find(x => x.Id == Id).Name;
+        }
+
+        set {
+            lemp.Find(x => x.Id == Id).Name = value;
+        }
+    }
+   
+   
+   
+
+
+}
+

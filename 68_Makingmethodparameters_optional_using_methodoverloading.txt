@@ -1,0 +1,40 @@
+68_Makingmethodparameters_optional_using_methodoverloading-
+*********************************************************************
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+     AddNumbers(10, 20,new int[] { 20,30});
+      
+    }
+
+    public static void AddNumbers(int a, int b)//over loading method hich inturn calls this method and pass null as the third parameters.
+    {
+
+        AddNumbers(a, b, null);
+    }
+
+    public static void AddNumbers(int a, int b, int[] numbers)//original method
+    {
+        int result = a + b;
+        if (numbers != null)
+        {
+            foreach (int i in numbers)
+            {
+                result += i;
+            }
+
+
+            
+        }
+        Console.WriteLine("Result is {0}", result);
+    }
+
+}
+
+*********************************************************
+

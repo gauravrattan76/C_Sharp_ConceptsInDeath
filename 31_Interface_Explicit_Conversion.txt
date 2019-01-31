@@ -1,0 +1,59 @@
+31_Explicit Interface Implementation-
+
+***************************************
+
+Question-
+We have 2 interfaces with same name and a class inheirts from bot the intrfaces how we can implement the methods of the interfaces.
+____________________________________________________________________
+
+Used when both the interfaces are having the same method names-
+
+while implemneting the methods we dont need to specify the access modifiers.
+*********************************************
+
+Code-
+
+
+using System;
+
+interface I1
+{
+    void Print();
+}
+
+interface I2
+{
+    void Print();
+}
+
+class Test : I1, I2
+{
+    void I1.Print()//here we are explicitly converting the method to interface type and we have to remove the access modifier.
+    {
+        Console.WriteLine("Interface1 Implemented");
+    }
+
+    void I2.Print()
+    {
+        Console.WriteLine("Interface2 Implemented");
+    }
+}
+
+class Program
+{
+
+    public static void Main()
+    {
+        Test t = new Test();
+        ((I1)t).Print();//we are accessing via interface reference variable
+        ((I2)t).Print();
+
+we can aslo say that
+        I1 in1 = new Test();
+         I2 in2 = new Test()'
+
+               in1.Print();
+                                  in2.Print();
+
+    }
+}

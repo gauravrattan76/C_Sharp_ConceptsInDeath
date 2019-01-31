@@ -1,0 +1,161 @@
+88_Thread Start Delegate-
+*****************************************
+Why we need thread start delegate-
+
+Thread start is nothing but a delegate.the purpose of thread is to execute a function.delegate is a type saf function pointer.
+All threads require a entry point to a function that thread can excute.
+so delegate are usedd.i.e thread start delegate to tell that this function is the netry point in the application.
+
+
+If we dont create thread start delegate fraework will create automatically for us.
+******************************************
+
+
+
+using System;
+using System.Threading;
+
+class Program
+{
+    public static void Main()
+    {
+        Thread T = new Thread(Numbers.Print);
+        T.Start();
+    }
+
+
+}
+
+
+class Numbers
+{
+    public static void Print()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+*****************************************
+Using Thread start Delegate-
+
+using System;
+using System.Threading;
+
+class Program
+{
+    public static void Main()
+    {
+        Thread T = new Thread(new ThreadStart(Numbers.Print));
+        T.Start();
+    }
+
+
+}
+
+
+class Numbers
+{
+    public static void Print()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+
+**************************************
+
+Usind delegate-
+
+using System;
+using System.Threading;
+
+class Program
+{
+    public static void Main()
+    {
+        Thread T = new Thread(delegate() { Numbers.Print(); });
+        T.Start();
+    }
+
+
+}
+
+
+class Numbers
+{
+    public static void Print()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+
+******************************************************
+
+Using Lambda expresion-
+
+using System;
+using System.Threading;
+
+class Program
+{
+    public static void Main()
+    {
+        Thread T = new Thread(()=> { Numbers.Print(); });
+        T.Start();
+    }
+
+
+}
+
+
+class Numbers
+{
+    public static void Print()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+**************************************8
+If the method is not static we ned to create the instance and invoke the method on instance-
+
+using System;
+using System.Threading;
+
+class Program
+{
+    public static void Main()
+    {
+        Numbers N = new Numbers();
+        Thread T = new Thread(new ThreadStart (N.Print));
+        T.Start();
+    }
+
+
+}
+
+
+class Numbers
+{
+    public  void Print()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+

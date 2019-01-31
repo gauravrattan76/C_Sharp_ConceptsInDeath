@@ -1,0 +1,88 @@
+66_Overloading_Indexres-
+***************************************************************
+
+Indexres can be overloaded on the basis of number and type of parameters.
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+        Customer cust = new Customer();
+        string name = cust[1];
+        Console.WriteLine("name is {0}", name);
+        cust[1] = "Rashim";
+        Console.WriteLine("name is {0}", cust[1]);
+        cust["Male"] = "Female";
+        Console.WriteLine("{0}", cust["Male"]);
+        Console.WriteLine("{0}", cust["Female"]);
+    }
+
+
+}
+
+public class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Gender { get; set; }
+}
+
+ class Customer
+{
+    private List<Employee> lemp;
+
+    public Customer()
+    {
+        lemp = new List<Employee>();
+        lemp.Add(new Employee { Id = 1, Name = "Gaurav", Gender="Male" });
+        lemp.Add(new Employee { Id = 2, Name = "Rattan", Gender="Female" });
+        lemp.Add(new Employee { Id = 3, Name = "Ravi", Gender = "Male" });
+        lemp.Add(new Employee { Id = 4, Name = "German", Gender = "Female" });
+
+
+    }
+
+    public string this[int Id]//creating Indexers using this keyword and it has a getter and setter
+    {
+        get {
+            return lemp.Find(x => x.Id == Id).Name;
+        }
+
+        set {
+            lemp.Find(x => x.Id == Id).Name = value;
+        }
+    }
+
+    public string this[string Gender]//Overloading of idexers is hapening here. we are using the indexres gender to get the gender and the setting the gender to a new value.
+
+    {
+        get
+        {
+            return lemp.Find(x => x.Gender == Gender).ToString();
+        }
+
+        set
+        {
+            foreach (Employee em in lemp)
+            {
+                if (em.Gender == Gender)
+                {
+                    em.Gender = value;
+                }
+            }
+            
+        }
+    }
+
+
+
+
+
+
+}
+
+

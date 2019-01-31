@@ -1,0 +1,131 @@
+21_Inheritance in c#-
+
+*******************************************
+Move all the common fuctionality in the base class.
+
+Pillars of oops are-
+1.Inheritance
+2.encapsulation
+3.Abstarction
+4.Polymorphism
+
+*************************************************
+Inheritance allows code reuse
+
+c# supports only single class inheritance.
+c# supports multiple interface inheritnace.
+child class specialiszation of base class.
+base classes are automaticalli intantiated before child class
+parent class constructors executes first before child class.
+
+***********************************
+
+using System;
+
+class BaseEmployee
+{
+    public string Name="Gaurav";
+    public string Gende="Male";
+    public string City="Delhi";
+}
+
+class Temployee : BaseEmployee
+{
+    public int Salarymonthly = 23456;
+}
+class Pemployee : BaseEmployee
+{
+    public int Yearlysalary = 456666;
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Temployee temp = new Temployee();
+        Console.WriteLine(temp.Name);
+        Console.WriteLine(temp.Salarymonthly);
+
+        Pemployee pemp = new Pemployee();
+        Console.WriteLine(pemp.Name);
+        Console.WriteLine(pemp.Yearlysalary);
+    }
+}
+
+*********************************************************************************
+
+using System;
+
+class BaseEmployee
+{
+    public BaseEmployee()
+    {
+        Console.WriteLine("Base class constructor");//Base class onstrutor are called first beforethe child class'
+    }
+    public string Name="Gaurav";
+    public string Gende="Male";
+    public string City="Delhi";
+}
+
+class Temployee : BaseEmployee
+{
+    public Temployee()
+    {
+        Console.WriteLine("child class constructor");
+    }
+    public int Salarymonthly = 23456;
+}
+class Pemployee : BaseEmployee
+{
+    public int Yearlysalary = 456666;
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Temployee temp = new Temployee();
+   
+    }
+}
+
+**********************************************************
+
+Calling parametrised construtor even though we have not mentioned the intantiation-
+
+using System;
+
+class BaseEmployee
+{
+    public BaseEmployee()
+    {
+        Console.WriteLine("Base class constructor");
+    }
+
+    public BaseEmployee(string test)
+    {
+        Console.WriteLine(test);
+    }
+  
+}
+
+class Temployee : BaseEmployee
+{
+    public Temployee() :base("from the child class")//calling the parametrised constructor
+    {
+        Console.WriteLine("child class constructor");
+    }
+  
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Temployee temp = new Temployee();
+   
+    }
+}
+
+
+**********************************************************************

@@ -1,0 +1,65 @@
+89_Parametrised_Thread_Start_Delegate-
+*********************************************************************
+
+using System;
+using System.Threading;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("PLease enter a number");
+        int numb = Convert.ToInt16(Console.ReadLine());
+
+        Numbers num = new Numbers();
+        ParameterizedThreadStart th = new ParameterizedThreadStart(num.PrintNumbers);
+        Thread t = new Thread(th);
+        t.Start(numb);//passing the value here.
+    }
+       
+}
+
+public class Numbers
+{
+    public  void PrintNumbers(object target)//signture should be same as that of parametrised thread start delegate.
+    {
+        int number = 0;
+        if (int.TryParse(target.ToString(), out number))
+        {
+            for (int i = 0; i < number; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+
+******************************************************************
+
+This code works fine too-
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("PLease enter a number");
+        int numb = Convert.ToInt16(Console.ReadLine());
+
+        Numbers num = new Numbers();
+        Thread t = new Thread(num.PrintNumbers);//removed parametrised thread start delegate.
+        t.Start(numb);
+    }
+       
+}
+       
+    }
+
+}
+
+If we dont create parametrisd thread start delegate .net framework provide one for us by default.
+********************************************************************
+
+
+
+

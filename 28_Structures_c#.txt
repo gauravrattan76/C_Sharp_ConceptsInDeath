@@ -1,0 +1,63 @@
+28_Structures in c#-
+
+**********************************
+just like classes constructors can have -
+private fields
+public properties
+constructors
+methods
+
+************************************
+
+using System;
+
+public struct Employee
+{
+    int _Id;
+    string _Name;
+
+    public int Id
+    {
+        get { return this._Id; }
+        set { this._Id = value; }
+    }
+
+    public string Name
+    {
+        get { return this._Name; }
+        set { this._Name = value; }
+    }
+
+    public Employee(int Id, string Name)
+    {
+        this._Id = Id;
+        this._Name = Name;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine("Id is {0} and the name is {1}", this._Id, this._Name);
+
+    }
+}
+
+public class Program {
+    public static void Main()
+    {
+
+        Employee emp = new Employee(234, "Gaurav");//using constructors
+        emp.Print();
+
+        Employee emp1 = new Employee();//using pbulic properties
+        emp1.Id = 2345;
+        emp1.Name = "Randy";
+        emp1.Print();
+
+        Employee emp2 = new Employee()//using object intialser syntax.
+        {
+            Id = 34,
+            Name = "John"
+        };
+        emp2.Print();
+    }
+}

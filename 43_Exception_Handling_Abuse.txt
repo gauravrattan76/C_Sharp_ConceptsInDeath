@@ -1,0 +1,42 @@
+43_Exception Hnadling abuse-
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        try
+        {
+
+            Console.WriteLine("Enter the first Number");
+            int fnum = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Enter the Second Number");
+            int Snum = Convert.ToInt16(Console.ReadLine());
+
+            int result = fnum / Snum;
+            Console.WriteLine("Result is {0}", result);
+
+        }
+//All the below exceptions can be handeled very well without using exception handling.
+        catch (FormatException)
+        {
+            Console.WriteLine("We have a format Exception");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("We have a overflow Exception");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("We have a divide by zero Exception");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("We have a format Exception",ex.GetType().Name);
+        }
+
+    }
+
+}

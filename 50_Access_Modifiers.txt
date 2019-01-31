@@ -1,0 +1,45 @@
+50_Access_Modifiers-
+*******************************
+
+Internal-avaialble with in the conataining assembly.
+
+**************************************************
+Protected Internal-anywhere with in the containing assembly and from a derived class in another assembly.
+**************************************************
+Solution----
+Multiple Projects.
+
+
+*****************************
+
+If we compile a project an assembly is generated.
+
+Assembly are of 2 types-
+.exe-console applicarion/windows application
+.dll-web application/class libraray.
+
+
+
+*******************************************
+
+Have a solution
+create a console application
+create two class library.
+
+
+IN One class library have a field ,arked as internal then the field can be accessed in that assembly only.
+
+
+
+
+
+******************************************************************************
+Protected Internal-
+
+add reference to a class present in another asssembly.
+use using and the assemby name
+
+
+
+Then we can access using bas.Id = 101; keyword.
+

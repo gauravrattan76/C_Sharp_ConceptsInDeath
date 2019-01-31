@@ -1,0 +1,76 @@
+75_List_Collection_Functions-
+**************************************************************
+
+Contains function-
+Checks if the item exist in the ist. returns true if the item exist therwise false.
+
+  if (custlist.Contains(c4))
+        {
+            Console.WriteLine("List contains element 3");
+        }
+
+*********************************************************************
+
+exists()-
+
+checks if the item exist in the list based on a condition.This method return true if exists else fale.
+
+
+ if (custlist.Exists( x=> x.Name.StartsWith("G")))//checking the conditions
+        {
+            Console.WriteLine("we have a name starting ith G");
+        }
+
+
+***************************************************************
+
+Find()-
+ searches for the element that mathces the conditon defines in the lambda expression and return the first matchingitem from the list.
+
+
+Customer c = (custlist.Find(x => x.Salary > 50000));
+        {
+            Console.WriteLine(c.Name);
+        }
+
+
+*********************************************************
+FindLast()-
+
+searches the list for the element matching the condition specified in lambda xpresions and return tha last matching element from the list.
+
+ Customer c = (custlist.FindLast(x => x.Salary > 50000));
+        {
+            Console.WriteLine(c.Name);
+        }
+
+
+********************************************************
+
+FindAll()- Returns all the items matching the conditions.
+
+List<Customer> cstl = custlist.FindAll(x => x.Salary > 50000);
+
+        foreach (Customer c in cstl)
+        {
+            Console.WriteLine(c.Name);
+        }
+
+
+***************************************************************
+
+FindIndex()- return the index of the first matching element .
+
+************************************************
+
+FindLastIndex()- returns the Index of the last matching element in the lambda expression conditions.
+
+******************************************
+
+Convert an array to list - use ToList()
+
+List<Customer> custlist= myarray.ToList()
+
+Convert an list to array - use ToArray()
+
+Convert a list to dictionart - ToDictionary()

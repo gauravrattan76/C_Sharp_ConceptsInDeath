@@ -1,0 +1,28 @@
+14_Do_While_Loops-
+***************************************************
+
+While loop checks the condition first and then executes the statement.
+
+____________________________________________
+
+Do while loop checks the condition at the end of the loop.
+do while loop is guranteed to be executed atleast once.
+
+***************************************
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        int num = int.Parse(Console.ReadLine());
+        do
+        {
+            Console.WriteLine("Hello Gaurav");
+        } while (num > 3);
+    }
+
+
+}
+

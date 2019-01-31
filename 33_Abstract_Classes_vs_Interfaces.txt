@@ -1,0 +1,9 @@
+33_Abstract classes vs INterfaces-
+***************************************************
+1.Abstract classes can have implementatoons for some of its members but the interfcaes can not have implememntatoon for its members.
+2.Intrfaces can not have fields but abstract classes ca have fields.
+3.An interfacecan inherit from another interface only where as a abstract class ca inherit from from another abstract class or another interfcaes.
+4.A class can inherits from multiple interfaces at the same time but a class can not inherit from multiple classes at the same time.
+5.Abstract class memebers can have access modifiers where as the interfaces memebers can not have acces modifiers
+
+********************************************** 

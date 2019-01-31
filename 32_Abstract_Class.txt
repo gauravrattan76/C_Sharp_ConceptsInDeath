@@ -1,0 +1,57 @@
+32_Abstract Classes-
+
+1.To create an abstract class use abstarct keyword.
+abstract class Customer
+
+2.An abstract class is incomplete and hence can not be intantiated.
+3.An abstract can only used as a base class.
+4.An abstract class can contain abstarct meners but not mandatory.
+5.A non abstract classs derive from abstarct class must provide implementations for all the inherited abstract memebers.
+
+********************************************************
+
+If a class inherits an abstarct class 
+1.proviode implememtations for all the abstract inherited memebers from the base abstract calss.
+2.If the class doesnt wish to provide the implemenetation  then the class must be marked as abstract.
+
+Important Points- Abstarct classes can not be sealed..sealed means that it can not be inherited.
+***************************************************
+
+Code-
+
+using System;
+
+abstract class Customer
+{
+    public abstract void Print();
+
+     public void hello()
+{
+console.writeline("Non abtsract methods");
+}
+}
+
+ class Test : Customer
+{
+    public override void Print()//we need to override the  abstract methods
+    {
+        Console.WriteLine("Implelemnetd  abstract class");
+    }
+}
+
+class Program
+{
+
+    public static void Main()
+    {
+        //Test t = new Test();
+        Customer t = new Test();
+        t.Print();
+    }
+}
+
+
+Important- Abstarct class can contain non abstract methods and then we need to implement those methods.
+
+
+********************************************************************************

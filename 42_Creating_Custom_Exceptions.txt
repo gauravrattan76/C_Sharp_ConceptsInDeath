@@ -1,0 +1,50 @@
+42_Custom_Exceptions-
+
+create  class that inherits from Exception class.
+
+***********************************************************
+1.Create a class that derives from exception class.end the name of the class with xception keyword.
+2.provide constructors that takes string as parameter and call the base class constructor using current class constructor.
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        try
+        {
+            throw new UseralreadyLoggedinexception("User already Logged in");
+        }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine();
+            Console.WriteLine(ex.InnerException.Message);
+        }
+       
+    }
+
+    public class UseralreadyLoggedinexception : Exception
+    {
+        public UseralreadyLoggedinexception(string message) :base(message)//customising the exception using constructors. clling the parent constructors//communicating from the derived class from the base class.
+            {
+            
+            }
+
+        public UseralreadyLoggedinexception(string message,Exception innerexception) : base(message,innerexception)
+        {
+
+        }
+
+
+    }
+}
+
+******************************
+Serailaizable-breaking donw the object to pckets that can be transfreed over the network.
+
+If you want to use this class in another applicatio domain the serializable attribute.
+
+class has tobe decorated with serializable attribute.

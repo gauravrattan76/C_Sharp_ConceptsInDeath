@@ -1,0 +1,57 @@
+90_Passing data to thread function in typesafe manner-
+*************************************************************************
+Logic - create a private field and intialise the field in the consructor.
+
+and pass value to the constructor while creating instance of it.
+
+______________________________________________________________________
+Code-
+
+
+using System;
+using System.Threading;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("PLease enter a number");
+        int numb = Convert.ToInt16(Console.ReadLine());
+
+        Numbers num = new Numbers(numb);
+        Thread t = new Thread(num.PrintNumbers);
+        t.Start();
+    }
+       
+}
+
+public class Numbers
+{
+    private int _target;
+
+    public Numbers(int target)
+    {
+        this._target = target;
+    }
+    public  void PrintNumbers()
+    {
+    
+        
+            for (int i = 0; i < _target; i++)
+            {
+                Console.WriteLine(i);
+            }
+      
+       
+    }
+
+}
+
+
+*******************************************************************
+
+
+
+

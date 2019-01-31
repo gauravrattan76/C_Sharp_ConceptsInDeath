@@ -1,0 +1,50 @@
+59_Diferrence between convert.tostring and tostring method-
+*************************************************
+.tostring() throws a null reference exception if the value is null.
+
+Convet.tostring() will handel nulls
+
+First using ToString() method-
+*************8
+using System;
+
+class Program
+{
+
+    public static void Main()
+    {
+        Customer C1 = null;
+        string str = C1.ToString();
+        Console.WriteLine(str);//we get a null reference exception
+        
+    }
+}
+
+class Customer
+{
+public string Fname { get; set; }
+}
+
+
+*****************************************
+Using Convert.tostring()-
+
+
+using System;
+
+class Program
+{
+
+    public static void Main()
+    {
+        Customer C1 = null;
+        string str = Convert.ToString(C1);
+        Console.WriteLine(str);
+        
+    }
+}
+
+class Customer
+{
+public string Fname { get; set; }
+}

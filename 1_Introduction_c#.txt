@@ -1,0 +1,103 @@
+1_Introduction_c#
+*************************************************
+
+Note when we create a project same name gets assigned to the namespace-
+
+so we have a solution explorerr and the project with the name we have entered.
+
+__________________________________________________
+Basic program-
+
+using system;
+class program
+{
+static void Main()
+{
+
+
+}
+
+}
+
+
+Console screen is nothing but the command prompt window.
+
+
+In .Net framework we have a class called console class.we use the method name writleine.
+
+
+console.writeline("Hello Gaurav");
+
+Here console is a class and writeline is the method name.
+
+
+--------------------------------------------
+
+using system- is the namespace declaration. we tell the program that we are using the code present in system namesspace.
+
+________________________________________________
+
+namespace is collection of classes.
+
+Namespace is used to organise your code and collection of classe interfaces stricts enums and delegates.
+
+
+Namespace can contain other namespaces as well.
+_____________________________________________________
+Compiler error - when we build a solution we get the compiler error.
+
+________________________________________________________
+
+Main() method is the entry point in your application.
+
+
+
+
+______________________________________________________
+
+
+Any piece of code we write should be in  a class.
+
+
+so functions and methods should be in a class.
+
+
+Main()- The execution of the program should start from main and end to the point where it gets closed.
+
+
+
+*************************************************************************************
+
+Can we have more than one main method in c#-
+
+using System;
+
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello from Main top");
+
+        }
+    }
+
+class redmi
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello from bottom main");
+    }
+
+}
+
+
+
+Now go to Properties on the project name and then go to application and then to the start up project.
+
+In the start up project set up the class with the main method you want to run .
+
+
+************************************************************************************************
+
+

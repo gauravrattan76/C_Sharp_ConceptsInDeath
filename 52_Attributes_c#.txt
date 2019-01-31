@@ -1,0 +1,57 @@
+52_Attributes-
+**************************************
+Attributes allows us to add declarative information to our programs.This information can be queried at runtim using reflection.
+
+There are loads of predefined attributes and we can have own customised attribute as well.
+
+Predefined attributes-
+Obsolete-Marks types and type members as obsolete.
+Web Method-
+Serializable-
+
+It is possible to customise attribute using attribute parameters.
+
+Attribute is a class that inherits from system.attribute base class.
+
+********************************************************
+Code-
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+       int d= Calculator.Add(4, 5);
+        Console.WriteLine("Sum i {0}", d);
+
+        int p = Calculator.Add(new List<int> { 1,2,3,4,5});
+        Console.WriteLine("Sum i {0}", p);
+
+    }
+
+}
+
+class Calculator
+{
+    [Obsolete("This method id obsolete",true)]//If i did nt had true then I only got warning,once I include the parameter as true it will throw error.
+    public static int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public static int Add(List<int> number)
+    {
+        int sum = 0;
+
+        foreach (int n in number)
+        {
+            sum += n;
+        }
+
+        return sum;
+    }
+}
+

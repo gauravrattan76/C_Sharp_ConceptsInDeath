@@ -1,0 +1,35 @@
+69_Parameter_optional_using_parameters_defaults-
+********************************************************
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void Main()
+    {
+     AddNumbers(10, 20);
+      
+    }
+
+
+    public static void AddNumbers(int a, int b, int[] numbers = null)//specifying the parameters default valu as null
+    {
+        int result = a + b;
+        if (numbers != null)
+        {
+            foreach (int i in numbers)
+            {
+                result += i;
+            }
+
+
+            
+        }
+        Console.WriteLine("Result is {0}", result);
+    }
+
+}
+
+
+*********************************************************************

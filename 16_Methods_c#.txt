@@ -1,0 +1,101 @@
+16_Methods in c#-
+**************************************
+Methods are also called functions.
+Methods are usefull because they allow us to define a logic once and then we can use it at many places.
+
+Method makes the maintenance of the appliaction easier.
+
+**********************************
+[attributes]
+accessmodifer returntype methodname{parameters}
+{
+Method Body
+}
+
+********************************
+
+
+Instance Methods-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Program p = new Program();//for calling intance method we need to creare a intance of the class
+            p.Printeven();//invoking the method on the instance.
+
+        }
+
+        public void Printeven() {//Instance Method
+            int start = 0;
+            while (start < 20)
+            {
+                Console.WriteLine(start);
+                start += 2;
+            }
+
+        }
+    }
+   
+}
+************************************************
+Staic methods -
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Program.Printeven();//static methods are invoked usning classname.methdname
+
+        }
+
+        public static void Printeven() {//static methods
+            int start = 0;
+            while (start < 20)
+            {
+                Console.WriteLine(start);
+                start += 2;
+            }
+
+        }
+    }
+   
+}
+
+********************************************
+static methods is invoked using the classname and the instance method is isnvoked using the instanc of the class.
+***********************************************
+
+Difference between instance method and static methods-
+multiple instance of a class can be created andneach instance has its onw separate methods.
+
+when a method is static there is no instance of the methods,we can invoke that method only once.
+
+public static void sum(int a,int b)
+
+program.sum(20,30);
+
+*********************************************
+
+
+
+
+

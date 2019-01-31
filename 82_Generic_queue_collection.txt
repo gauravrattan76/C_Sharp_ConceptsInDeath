@@ -1,0 +1,81 @@
+82_Generic_queue_collection-
+**************************************************************
+
+Queue is a generic FIFO i.e first in first out collection class present in system.collection.generic namespace.
+
+To add items at the end of queue ue enqueue() method.
+
+To remove items at the begininf of queue use dequeue() method.
+
+contains()- to check if the items exist in the queue.
+
+Peek()- method returns the items present in the begining of the queue without removing it. where a dequeue removes it.
+
+*********************************************************************
+
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        Customer c1 = new Customer() { Id = 100, Name = "Gaurav", Salary = 12345 };
+        Customer c2 = new Customer() { Id = 101, Name = "Nisha", Salary = 500001 };
+        Customer c3 = new Customer() { Id = 102, Name = "Ravi", Salary = 12345 };
+        Customer c4 = new Customer() { Id = 103, Name = "Dheeraj", Salary = 12345 };
+        Customer c5 = new Customer() { Id = 104, Name = "Rocky", Salary = 5000000 };
+        Customer c6 = new Customer() { Id = 105, Name = "Denver", Salary = 5000000 };
+        Customer c7 = new Customer() { Id = 106, Name = "Jimmy", Salary = 5000000 };
+
+
+
+        Queue<Customer> cusqueue = new Queue<Customer>();
+        cusqueue.Enqueue(c1);
+        cusqueue.Enqueue(c2);
+        cusqueue.Enqueue(c3);
+        cusqueue.Enqueue(c4);
+        cusqueue.Enqueue(c5);
+
+        foreach (Customer c in cusqueue)
+        {
+            Console.WriteLine("Name is {0} {1}",c.Name,c.Salary);
+        }
+
+        cusqueue.Dequeue();
+        cusqueue.Dequeue();
+        cusqueue.Dequeue();
+        cusqueue.Dequeue();
+
+        foreach (Customer c in cusqueue)
+        {
+            Console.WriteLine("Name is {0} {1}", c.Name, c.Salary);
+        }
+    }
+}
+
+
+
+public class Customer 
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+
+  
+}
+
+
+
+*****************************************
+
+
+
+        Customer cn = cusqueue.Peek();
+        Console.WriteLine("NAME -{0}", cn.Name);
+
+
+

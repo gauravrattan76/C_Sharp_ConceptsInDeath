@@ -1,0 +1,11 @@
+81_When_touse_ditionary_overlist-
+**************************************************
+
+Find() method of the listclass loops is used to iterate over each object untill a match is found.
+
+so if you want to look up avalue using a key dictionary is better for performnce over list.
+
+So use dictionary when you know the collection will be primary used for lookups.
+
+
+***************************************************************

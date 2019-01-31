@@ -1,0 +1,66 @@
+45_Why Enums-
+******************************
+Enums are strongly types constants.
+If a program uses as set of intergral numbers consider replaciong the, with enums as enums provide better readablity and maintainaility.
+
+
+Need for Enums-
+
+1.No Code readabiltiy.
+2.No Code Maintenanbility.
+
+*********************************
+
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    public static void Main()
+    {
+        List<Customer> custlist = new List<Customer>();
+        custlist.Add(new Customer()
+        {
+            Name = "Gaurav Rattan",
+            Gender = 0
+        });
+        custlist.Add(new Customer()
+        {
+            Name = "Manjuri",
+            Gender = 1
+        });
+        custlist.Add(new Customer()
+        {
+            Name = "Rashi",
+            Gender = 2
+        });
+
+
+        foreach (Customer cst in custlist)
+        {
+            Console.WriteLine("Name of Customer ={0} and Gender of Customer ={1}", cst.Name, Program.Getgender(cst.Gender));
+        }
+
+    }
+
+    public static string Getgender(int number)
+    {
+        switch (number)
+        {
+            case 0: return "Male";
+            case 1: return "Female";
+            case 2: return "Invalid Gender";
+            default: return "Unknown";
+
+        }
+
+    }
+
+}
+
+public class Customer
+{
+    public string Name { get; set; }
+    public int Gender { get; set; }
+}

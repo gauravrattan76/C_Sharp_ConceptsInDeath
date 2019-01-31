@@ -1,0 +1,30 @@
+13_While_Loops-
+*********************************************
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        
+        Console.WriteLine("Please enter the number");
+        int number = int.Parse(Console.ReadLine());
+        int sum = 0;
+        while (sum <= number)
+        {
+            Console.Write(sum+ " ");
+            sum = sum + 2;
+
+        }
+    }
+
+
+
+}
+
+
+*************************************************************88
+
+writeline - writes the number in new lines.
+write - writes the number in the same lines.

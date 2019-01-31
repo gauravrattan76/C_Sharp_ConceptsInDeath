@@ -1,0 +1,151 @@
+47_Enums details-
+
+****************************************
+If a program uses a set of integral numbers its better replacing them with enums as it makes the program more readable and maintenable.
+*****************************
+1.Enums are strongly types constants hence an explicit cast is nneded to convert from enum type to a intergar;l type and vice versa.
+2.Default underlying type of enum is int.
+3.Te default value of first element is 0 and it gets inceremented by1.
+4.Enums are value types.
+*****************************************************
+
+Code-
+
+use Enum calss and getnames and getvalues m,ethod to get the names and the values.
+Both the below will return a array one will return an array of int other will return an array of string.
+
+Enum.getnames(typeof(Gender))
+enum.getvakues(typpeof(Gender))
+
+
+
+
+******************
+
+using System;
+
+public enum Gender
+{
+Male,
+Female,
+Unknown
+}
+
+class Program
+{
+
+    public static void Main()
+    {
+       int[] val = (int[])Enum.GetValues(typeof(Gender));//returns an array of int
+        foreach (var v in val)
+        {
+            Console.WriteLine("Value is {0}", v);
+        }
+
+       string[] nam= (string[])Enum.GetNames(typeof(Gender));//return an arrays of strings
+        foreach (var n in nam)
+        {
+            Console.WriteLine("Name of the enum values {0}", n);
+        }
+
+    }
+
+}
+
+
+***************************
+Changing the underliningtype of the enums-
+
+using System;
+
+public enum Gender :Short//changes the undelinning type of the enums
+{
+Male,
+Female,
+Unknown
+}
+
+class Program
+{
+
+    public static void Main()
+    {
+       short[] val = short[])Enum.GetValues(typeof(Gender));//returns an array of int
+        foreach shortv in val)
+        {
+            Console.WriteLine("Value is {0}", v);
+        }
+
+       string[] nam= (string[])Enum.GetNames(typeof(Gender));//return an arrays of strings
+        foreach (var n in nam)
+        {
+            Console.WriteLine("Name of the enum values {0}", n);
+        }
+
+    }
+
+}
+
+**********************************
+How to change the Index of the elements-
+
+using System;
+
+public enum Gender :Short//changes the undelinning type of the enums
+{
+Male =1,//so changing the value for the enums
+Female = 2,
+Unknown=23
+}
+
+class Program
+{
+
+    public static void Main()
+    {
+       short[] val = short[])Enum.GetValues(typeof(Gender));//returns an array of int
+        foreach shortv in val)
+        {
+            Console.WriteLine("Value is {0}", v);
+        }
+
+       string[] nam= (string[])Enum.GetNames(typeof(Gender));//return an arrays of strings
+        foreach (var n in nam)
+        {
+            Console.WriteLine("Name of the enum values {0}", n);
+        }
+
+    }
+
+}
+
+
+**********************************
+
+public enum Gender :Short//changes the undelinning type of the enums
+{
+Male =1,//so changing the value for the enums
+Female = 2,
+Unknown=23
+}
+
+
+Public enum Season
+{
+Summer,
+Winter,
+Autum
+}
+
+Gender gender = (Gender)Season.winter//explicit cste is required to convert from one form to another.
+*************************************************
+
+
+
+
+
+
+
+
+
+

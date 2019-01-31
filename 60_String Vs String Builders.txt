@@ -1,0 +1,44 @@
+60_String Vs String Builders-
+********************************************
+strings are immutable and hence pooor perfromance.
+
+code-
+
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        string str = "Hello";
+        str += "world";
+        str += "How are you!!";
+        str += "I am good";
+        Console.WriteLine(str);
+
+    }
+}
+
+
+Each time refernce variables are created in memory and they are immutable eevrtime new reference variabes are getting created in memory
+********************************************
+stringbuilder are present in system.text namespace.
+
+stringbuiled are mutable and give better perroamce when heavy string manipulation involved.
+
+using System;
+using System.Text;
+
+class Program
+{
+    public static void Main()
+    {
+        StringBuilder str = new StringBuilder("Hello Gaurav");//inorder to add element we create an instance of it and then append to it
+        str.Append("world");
+        str.Append("How are you!!");
+        str.Append("How are you!!");
+        Console.WriteLine(str);
+
+    }
+}

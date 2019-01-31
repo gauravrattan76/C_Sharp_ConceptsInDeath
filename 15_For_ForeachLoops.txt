@@ -1,0 +1,35 @@
+15_For_ForeachLoops-
+********************************************
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        int[] myarray = new int[3];
+        myarray[0] = 100;
+        myarray[1] = 101;
+        myarray[2] = 102;
+
+        for (int i = 0; i <= myarray.Length; i++)//for loop
+        {
+            Console.WriteLine(myarray[i]);
+        }
+
+        foreach (int l in myarray)//foreach loop
+        {
+            Console.WriteLine(l);
+        }
+
+    }
+
+
+}
+
+*********************************
+
+Advantage is that we never get indexoutof range exception in foreachloop.
+
+
+

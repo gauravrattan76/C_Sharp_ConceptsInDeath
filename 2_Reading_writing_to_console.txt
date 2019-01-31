@@ -1,0 +1,62 @@
+2_Reading_writing_to_console
+*******************************************************
+Using placeholder {0}-
+
+
+using System;
+
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Please enter the first number");
+            string a = Console.ReadLine();
+            Console.WriteLine("Please enter the second number");
+            string b = Console.ReadLine();
+
+            Console.WriteLine("You have entered {0} {1}", a, b);
+
+        }
+    }
+
+
+
+
+**********************************************************
+Using concatenation opertor-
+
+
+using System;
+
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Please enter the first number");
+            string a = Console.ReadLine();
+            Console.WriteLine("Please enter the second number");
+            string b = Console.ReadLine();
+
+            Console.WriteLine("You have entered"+ a+ b);
+
+        }
+    }
+
+****************************************************************
+
+
+Interview Question-
+
+string class format method-
+
+
+
+String.Format("{0:n}", 1234); //Output: 1,234.00
+
+string.Format("{0:n0}", 9876); // no digits after the decimal point. Output: 9,876
+
+
+
+************************************************************

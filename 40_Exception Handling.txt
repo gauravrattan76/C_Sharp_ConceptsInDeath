@@ -1,0 +1,70 @@
+40_Exception handling in c#-
+
+Exception refers to the unhandeled errors or unforseen errors.
+*********************************************************************
+Trying to read from a file that dent exist-filenot found exception.
+trying to read from  database table that doesnt exist-sql exception.
+
+**************************************
+Exception is a class that is derived from system.exception class.
+Message-gives the message that describes exception.
+stack trace-gives the line number.
+***************************************
+we use try catch and finally blocks to handle exception-
+
+try-code that get throw errors.
+catch-catch exceptions and handles them
+finally-for releaseing ressources ..guranateed to be executed.
+
+Specific exceptions shall be caught before base exception if we have exception block above the specific exception we get compile time error.
+*******************************************************************
+
+
+using System;
+using System.IO;
+
+class Program
+{
+    public static void Main()
+    {
+        StreamReader str = null;//str is still null
+        try
+        {
+            str = new StreamReader("C:\\Gaurav\\garv123.txt");//It will throw exception
+            Console.WriteLine(str.ReadToEnd());
+
+        }
+
+        catch (FileNotFoundException ex)//Trying to ctegorise exception
+        {
+            Console.WriteLine("please check if the file with name {0} exist", ex.FileName);
+            Console.WriteLine();
+            Console.WriteLine(ex.Message);
+            Console.WriteLine();
+            Console.WriteLine(ex.StackTrace);
+        }
+        catch (Exception ex)//Genaralised exception will come in the last
+        {
+
+            Console.WriteLine(ex.Message);
+            Console.WriteLine();
+            Console.WriteLine(ex.StackTrace);
+        }
+
+        finally//Guaranteed to be executed we release resources here.
+        {
+            if (str != null)
+            {
+                str.Close();
+            }
+            Console.WriteLine("Guarenteed to be executed");
+        }
+      
+
+    }
+
+}
+
+Importance of finally- If dont have a finaly and if exception is found then control goes to catch and if there is a exception in catch too then program termintaes there itself.
+
+*************************************************************************

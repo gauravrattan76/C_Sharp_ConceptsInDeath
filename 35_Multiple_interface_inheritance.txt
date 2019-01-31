@@ -1,0 +1,59 @@
+35_Multiple interface inheritance-
+********************************************************
+
+using System;
+
+interface IA
+{
+
+    void PrintA();
+}
+
+interface IB
+{
+
+    void PrintB();
+}
+
+class C : IA
+{
+    public void PrintA()//Implements the method in IA interface
+    {
+        Console.WriteLine("Method from class c");
+    }
+}
+
+class D : IB
+{
+    public void PrintB()//Implemenst the method in IB interface
+    {
+        Console.WriteLine("Method from class D");
+    }
+}
+
+class E : IA, IB
+{
+    C cn = new C();
+    D dn = new D();
+    public void PrintA()
+    {
+        cn.PrintA();//using the c class implemeted methods
+    }
+
+    public void PrintB()
+    {
+        dn.PrintB();
+    }
+
+}
+
+class program
+{
+    public static void Main()
+    {
+        E en = new E();
+        en.PrintA();
+        en.PrintB();
+    }
+}
+

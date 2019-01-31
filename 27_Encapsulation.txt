@@ -1,0 +1,69 @@
+27_Encapsulation-
+
+In c# to encapsulate and protect fields we use properties.
+
+we use get and set accessors to implemen properties.
+
+A propert with both get and set accessor is read write property
+
+if we have only get-then read only property
+
+if we have only set - we have write property.
+
+Advnagte of get and set is that we acess them as if they were public fields.
+*************************************
+
+using System;
+class Employee
+{
+    int _Id;
+    string _Name;
+    int _Passmark =35;
+
+
+    public int Id
+    {
+        get {return this._Id; }
+
+        set {
+            if (value < 0)
+            {
+                throw new Exception("Value can not be -ve");
+            }
+            else
+            {
+                this._Id = value;
+            }
+        }
+    }
+    public string Name
+    {
+        set {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("namecan not be null");
+            }
+            else { this._Name = value; }
+        }
+        get { return this._Name; }
+
+    }
+
+    public int Passmark {
+        get { return this._Passmark; }
+    }
+
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Employee emp = new Employee();
+        emp.Id = 23;//system exception value can not be null
+        emp.Name = "";//system exception name can not be null
+        //emp.Passmark;
+    }
+}
+
+***************************************************************************

@@ -1,0 +1,28 @@
+5_Common_operators_c#-
+*********************************************
+
+assignment operator =
+arithmetic ipertaor +-*/%
+comparison opertaor ==,!=,<,>,<=.>=
+conditional operators && ||
+ternary ioperator= ?:
+null coalescing opertaor ??
+
+********************************************
+
+Null coalescing operator example-
+
+int? total = 1000;
+            int red = total ?? 3;//checks if the value of total is null if the value is not null use 1000 else use 0
+            Console.WriteLine(red);
+
+**************************************************
+
+
+
+   int? total = null;
+            int red = total ?? 3;//since total is null now we get output as 3.
+            Console.WriteLine(red);
+
+
+**********************************************

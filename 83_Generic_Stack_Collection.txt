@@ -1,0 +1,71 @@
+83_Generic_Stack_Collection-
+*****************************************************************
+
+stack collection is analougous to stack of plates.
+stack is generic Last in first out class that is present in systme.collection.generics.
+
+**********************************************************
+
+
+Push()- to add an element to the top of stack.
+
+pop()- to remove and return th item present at top of the stack.
+
+contains()- to check if the element exist in the stack.
+
+peek()- returns item present at to of the stack with out removing it.
+
+Code-
+
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        Customer c1 = new Customer() { Id = 100, Name = "Gaurav", Salary = 12345 };
+        Customer c2 = new Customer() { Id = 101, Name = "Nisha", Salary = 500001 };
+        Customer c3 = new Customer() { Id = 102, Name = "Ravi", Salary = 12345 };
+        Customer c4 = new Customer() { Id = 103, Name = "Dheeraj", Salary = 12345 };
+    
+
+
+        Stack<Customer> cusqueue = new Stack<Customer>();
+        cusqueue.Push(c1);//adding element at the top of stack
+        cusqueue.Push(c2);
+        cusqueue.Push(c3);
+        cusqueue.Push(c4);
+
+        foreach (Customer c in cusqueue)
+        {
+            Console.WriteLine("Name is {0} {1}",c.Name,c.Salary);
+        }
+
+
+
+        Customer cn = cusqueue.Pop();//removes the top most element in the stack
+        Console.WriteLine("NAME -{0}", cn.Name);
+
+
+        Customer cnd = cusqueue.Peek();//returns the top most element in the stakc without removing it.
+        Console.WriteLine("NAME -{0}", cnd.Name);
+    }
+}
+
+
+
+public class Customer 
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+
+  
+}
+
+****************************************************************
+

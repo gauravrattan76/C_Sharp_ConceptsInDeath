@@ -1,0 +1,16 @@
+87_Advantages and Disadvantages of MultiThreading-
+*************************************************
+Advantages-
+1.To Maintain a responsive user interface.//create a new thread so that main thread is free for user interface.
+2.To make efficient use of processor time while waiting for i/o operations.
+3.To split large cup bound tasks to be processed simultaneously on a machine that has mutiple processors.
+
+**********************************************
+
+Disadvantages-
+
+1.On a single processor threading can affect performance negativley as there will be over head include in context swtiching i.e from one thread to another.
+2.Have to write more line of codes.
+3.Applications are diffcult to write.
+
+************************************************

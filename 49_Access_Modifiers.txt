@@ -1,0 +1,18 @@
+49_Access Modifiers -
+********************************
+
+Private- ONly avaiable with in the conatining type.
+
+Public- Avaialble anywhere.
+
+Protected- Member s are avaialable with in the containing type and type that derives from the contaning types.
+
+******************************************
+
+Class members are private by default.
+Classes are internal bty default.
+
+
+
+
+

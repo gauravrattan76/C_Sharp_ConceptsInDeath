@@ -1,0 +1,46 @@
+12_Switch_Statement_Continued-
+************************************************************
+
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+         start:
+        Console.WriteLine("Please enter the number");
+        int number = int.Parse(Console.ReadLine());
+       
+        switch (number)
+        {
+            case 10:
+              
+            case 20:
+           
+            case 30:
+                Console.WriteLine("You have eneterd {0}",number);
+                break;
+            default:
+                goto start;
+                
+        }
+    }
+
+
+}
+
+
+
+
+________________________________________________________________
+
+we have 
+
+start:// this is the label.
+
+
+
+goto start;//this line transfers back the control to the start lable and the program start exceuting from there.
+
+
+**************************************************************************

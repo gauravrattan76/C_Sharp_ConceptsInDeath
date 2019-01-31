@@ -1,0 +1,39 @@
+29_Difference between classes and strutures-
+
+1.Structures are value type and classes are refrence types.
+2.strutures are stored on stack and classe are stored on heaps.
+3.value types hold their value in memory where they are declared but refrence types hold reference to an object inmmemory.
+ex. int i =10; value is stored at memory location i =10;
+class c = new class();
+c is a the reference varaible which holds the address of the that object created.
+4.value types are destroyed immediately  after the scope is lost, where as for referece variable only the refernce variable is detsroyed if the scope is lost,Object needs to be destroyed by the garbage colecton.
+
+5.when we copy a struct into another changes in one struct will not affect the other one.
+int i = 10;
+int j=i;
+j = j+1;
+
+so i=10 and j= 11...so opeations on a will not affect the other ones.
+6.when we copy a class ino another class we get only copy of th refernce variable,both the refernce variable point to the same object on heap,so operations on one variable will affect the other one.
+********************************************************
+Very Importatny-
+
+Customer c1 = new customer();
+
+
+c1.id = 101;
+c1.name ="Gaurav";
+
+customer c2 = c1;
+
+so c2 reference variable and the c1 will point to the same object in mmemory.
+so c1 and c2 will point to the same object in memory.
+c2.name = mary;
+
+so if I now print c and c2==both will be mary
+
+****************************************
+7.Structures cant have destructors but classes have.
+8.structures cant have explict parameter less constructor but classes can have.as structures dont have object reference variable concept.
+
+9.struct can inheirt from another class,where as a class can,bot struct and class can inherit from interfaces.

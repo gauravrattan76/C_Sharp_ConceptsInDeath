@@ -1,0 +1,23 @@
+9_Comments-
+
+sinlgle line-//
+Multiple Line-/**/
+Xml documentaton comments-///
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Sampleclass//so when we hover mouse on this one we get the message that this is the sample class
+            
+
+        }
+    }
+    /// <summary>
+    /// this is a sample class Documentation
+    /// </summary>
+    public class Sampleclass { }
+}
