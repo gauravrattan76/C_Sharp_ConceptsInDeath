@@ -1,7 +1,7 @@
 28_Structures in c#-
 
 **********************************
-just like classes constructors can have -
+just like classes structures can have -
 private fields
 public properties
 constructors
