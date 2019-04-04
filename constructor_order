@@ -1,0 +1,44 @@
+Constructor order in c#-
+_________________________________________
+
+Its always the static contructors that gets called first.
+Then the non parameterised constructor that gets called.
+finally the parameteirsed constructor gets called.
+
+
+base class oncstructors are called first and then the child class onstructors.
+_______________________________________________________________________________________
+
+using System;
+
+// order is approximately
+/*
+   1) most derived initializers first.
+   2) most base constructors first (or top-level in constructor-stack first.)
+*/
+public class Program
+{
+    public static void Main()
+    {
+        A d = new A("den");
+        Console.ReadLine();
+    }
+}
+
+public class A
+{
+    
+
+    public A()
+    {
+        Console.WriteLine("A");
+    }
+    public A(string x) : this()
+    {
+        Console.WriteLine("A got " + x);
+    }
+}
+
+
+
+
