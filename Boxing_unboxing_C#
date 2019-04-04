@@ -1,0 +1,44 @@
+Value Types
+ 
+A variable representing an object of value type contains the object itself. (It does not contain a pointer to the object). Different value types are: 
+ 
+Simple Types: Integral Types (sbyte, byte, short, ushort, int, uint, long, ulong), bool type, char type, Floating point types(flaot,double) and the decimal types. They are all aliases of the .NET System Types.
+Struct Types 
+Enumeration Types
+System.Int32 a= 10; //It is a value type
+The value type objects can not be allocated on the managed heap.
+ 
+Reference Types
+ 
+A variable representing an object of reference type contains reference or address of the actual data. Reference types are allocated on the managed heap. Different reference types are: 
+The Object Type
+The class Type
+Interfaces
+Delegates
+The string type
+Arrays
+Myobj obj1; // obj1 is ia reference type assuming Myobj is of class type.  
+obj1=new myobj();
+obj1 is reference type variable (assuming Myobj is a class type variable).compiler allocates memory for this object on the heap and its address is stored in obj1.
+ 
+Boxing And Unboxing
+ 
+Having talked about these value types and reference types, now let us talk about boxing and unboxing. Converting a value type to a reference type is called Boxing. Unboxing is an explicit operation. You have to tell which value type you want to extract from the object.
+ 
+Consider the following code:
+Int32 vt= 10; //value type variable  
+object rt= vt; /*memory is allocated on the heap of size equal to size of vt,the value type bits are copied to the newly allocated memory and the address of the object is returned and stored in rt.This is basically called Boxing.*/  
+Int32 vt2=(Int32)rt;//Unboxing  
+Source Code 
+using System;  
+class BoxAndUnBox  
+{  
+public static void Main()  
+{  
+Int32 vt= 10; //value type variable  
+object rt= vt; /*memory is allocated on the heap of size equal to size of vt,the value type bits are copied to the newly allocated memory and the address of the object is returned and stored in rt.This is basically called Boxing.*/  
+vt=50;  
+Int32 vt2=(Int32)rt;//Unboxing  
+Console.WriteLine(vt+","+ rt);  
+}  
+}  
