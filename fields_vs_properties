@@ -1,0 +1,47 @@
+Properties expose fields. Fields should (almost always) be kept private to a class and accessed via get and set properties. Properties provide a level of abstraction allowing you to change the fields while not affecting the external way they are accessed by the things that use your class.
+
+public class MyClass
+{
+    // this is a field.  It is private to your class and stores the actual data.
+    private string _myField;
+
+    // this is a property. When accessed it uses the underlying field,
+    // but only exposes the contract, which will not be affected by the underlying field
+    public string MyProperty
+    {
+        get
+        {
+            return _myField;
+        }
+        set
+        {
+            _myField = value;
+        }
+    }
+
+    // This is an AutoProperty (C# 3.0 and higher) - which is a shorthand syntax
+    // used to generate a private field for you
+    public int AnotherProperty{get;set;} 
+}
+
+_____________________________________________________________________________________
+
+Object orientated programming principles say that, the internal workings of a class should be hidden from the outside world. If you expose a field you're in essence exposing the internal implementation of the class. Therefore we wrap fields with Properties (or methods in Java's case) to give us the ability to change the implementation without breaking code depending on us. Seeing as we can put logic in the Property also allows us to perform validation logic etc if we need it. C# 3 has the possibly confusing notion of autoproperties. This allows us to simply define the Property and the C#3 compiler will generate the private field for us.
+
+public class Person
+{
+   private string _name;
+
+   public string Name
+   {
+      get
+      {
+         return _name;
+      }
+      set
+      {
+         _name = value;
+      }
+   }
+   public int Age{get;set;} //AutoProperty generates private field for us
+}
