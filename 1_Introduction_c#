@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Welcome to C# ");
+        Console.ReadLine();
+    }
+}
+
+__________________________________________
+
+System is a namespace.
+
+A namespace is nothing but a collection of classes and namespaces,interfaces,structures,enums and delegates.
+
+console is a class in the namespace system and it has the method or the function writeLine.
+
+________________________________________
+
+We can also use the fully qualified name-
+
+
+class Program
+{
+    static void Main()
+    {
+        System.Console.WriteLine("Welcome to C# ");
+        System.Console.ReadLine();
+    }
+}
+
+________________________________
+
+static void Main()--tells the program execution from here and it should ends here too.
