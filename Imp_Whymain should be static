@@ -1,0 +1,13 @@
+You need an entry point into your program. Static means that you can call the function without having to instantiate an object/instance of a class. It's a bit "chicken and egg"... you can't instantiate an object before you're inside the program.
+
+A static method can be called without instantiating an object. Therefore main() needs to be static in order to allow it to be the entry to your program.
+
+As David says, you can just add the keyword static to the function definition to change it. It's worth looking into static (class) methods vs instance methods, and knowing the difference can be useful at times.
+
+Application startup occurs when the execution environment calls a designated method, which is referred to as the application's entry point. This entry point method is always named Main, and shall have one of the following signatures:
+
+     static void Main() {…}  
+     static void Main(string[] args) {…}  
+     static int Main() {…}  
+     static int Main(string[] args) {…}
+As shown, the entry point can optionally return an int value. This return value is used in application termination (§10.2).
