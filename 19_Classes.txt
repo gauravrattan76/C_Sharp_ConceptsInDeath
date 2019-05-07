@@ -46,6 +46,19 @@ class Program
 }
 
 *************************************************************************8
+  public Employee() {
+        Console.WriteLine("Non para,etersied");
+    }
+
+    public Employee(string fname, string lname):this()//to call the non parameterised constructor
+    {
+        this._fname = fname;
+        this._lname = lname;
+    }
+
+
+
+*************************************************************************
 Using non parameterised constructor-
 
 using System;
