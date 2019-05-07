@@ -1,0 +1,16 @@
+Private constructor is used to prevent a class to be instantiated. But, if a class has other public constructors, then that can be instantiated. A class can have multiple private constructor and can call it by another constructor.
+For example:- 
+Class A
+{
+      int a;
+      private A()
+      {              
+       }
+       public A(int b) : A()  // Calling private constructor by another constructor.
+       {
+                this.a=b;
+        }
+}
+
+
+Static Constructor :- Static constructor is used to initialize static members of a class. It is called by CLR, not by creating instance of the class. As it is called by CLR, it is not certain when it is called. But it is called when class is loaded. It can not be explicitly called by code. Static constructor has no any parameter. A class can have only one static constructor.
