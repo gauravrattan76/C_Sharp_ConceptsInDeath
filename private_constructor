@@ -1,0 +1,65 @@
+using System;
+
+class Geeks
+{
+
+    // Variables 
+    public string name;
+    public  int num;
+
+    // Creating private Constructor 
+    // using private keyword 
+    private Geeks()
+    {
+
+        Console.WriteLine("Welcome to Private Constructor");
+    }
+
+    // Default Constructor 
+    // with parameters 
+  
+}
+
+// Driver Class 
+class GFG
+{
+
+    // Main Method 
+    static void Main()
+    {
+
+        // This line raises error because 
+        // the constructor is inaccessible 
+        // Geeks obj1 = new Geeks(); 
+    }
+}
+
+so if we have a priv ate constructor we wont be able to create instance of the class.
+
+
+public class Base
+  {
+   private Base()
+   {
+   }
+
+  public string Name { get; set; }
+ }
+
+ public class Derived : Base
+ {
+  public Derived(string name)
+  {  
+    base.Name = name;
+  }
+ }
+ 
+ 
+ 
+ Important--we can not inherit a class with private constructor and sealed keyword.reason-
+ 
+ 5
+
+Because you need a constructor to instantiate a class, and the constructor is held private by the class you want to derive. No one but the class itself is allowed access to it. For all it knows it doesn't exist! (You might want to use a private constructor for the Singleton pattern for example)
+
+If you want to allow inheritance, but keep the constructor from called outside, you need the protected keyword.
