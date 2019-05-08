@@ -1,0 +1,26 @@
+public struct Rational
+{
+    private long numerator;
+    private long denominator;
+
+    public Rational(long num, long denom)
+    { /* Todo: Find GCD etc. */ }
+
+    public Rational(long num)
+    {
+        numerator = num;
+        denominator = 1;
+    }
+
+    public Rational() // This is not allowed
+    {
+        numerator = 0;
+        denominator = 1;
+    }
+}
+
+Or the big reason is that a structure is a value type and value types are initialized by a default value and the constructor is used for initialization.
+
+You don't have to instantiate your struct with the new keyword. It instead works like an int; you can directly access it.
+
+Structs cannot contain explicit parameterless constructors. Struct members are automatically initialized to their default values.
