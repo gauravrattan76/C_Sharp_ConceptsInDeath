@@ -3,7 +3,7 @@
 1.Structures are value type and classes are refrence types.
 2.strutures are stored on stack and classe are stored on heaps.
 3.value types hold their value in memory where they are declared but refrence types hold reference to an object inmmemory.
-ex. int i =10; value is stored at memory location i =10;
+ex. int i =10; value is stored at memory location i =10
 class c = new class();
 c is a the reference varaible which holds the address of the that object created.
 4.value types are destroyed immediately  after the scope is lost, where as for referece variable only the refernce variable is detsroyed if the scope is lost,Object needs to be destroyed by the garbage colecton.
